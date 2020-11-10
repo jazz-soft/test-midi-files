@@ -1,0 +1,22 @@
+{
+  "name": "test-midi-files",
+  "version": "0.0.0",
+  "description": "test midi files",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "test",
+    "midi"
+  ],
+  "author": "jazz-soft (https://jazz-soft.net)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jazz-soft/test-midi-files.git"
+  },
+  "homepage": "https://github.com/jazz-soft/test-midi-files",
+  "bugs": "https://github.com/jazz-soft/test-midi-files/issues",
+  "license": "MIT",
+  "priate": true
+}
