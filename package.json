@@ -4,13 +4,19 @@
   "description": "test midi files",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node ."
   },
   "keywords": [
     "test",
     "midi"
   ],
   "author": "jazz-soft (https://jazz-soft.net)",
+  "dependencies": {
+    "jzz": "^1.1.4",
+    "jzz-gui-player": "^1.4.4",
+    "jzz-midi-smf": "^1.4.0",
+    "jzz-synth-tiny": "^1.2.0"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/jazz-soft/test-midi-files.git"
