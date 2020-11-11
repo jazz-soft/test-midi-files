@@ -8,7 +8,7 @@ smf.push(trk);
 trk.smfSeqName('C Major Scale Test')
   .smfCopyright('https://jazz-soft.net')
   .smfText('This is the most basic MIDI test to serve a template for more useful tests.\n')
-  .smfText('You must hear a C-Maor scale.')
+  .smfText('You must hear a C-Major scale.')
   .smfText(' Now you must hear C5!')
   .noteOn(0, 'C5', 127).tick(96).noteOff(0, 'C5')
   .smfText(' Now you must hear D5!')
