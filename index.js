@@ -5,16 +5,37 @@ require('jzz-midi-smf')(JZZ);
 
 if (module.parent) {
   module.exports.play = function(smf) {
+    if (!(smf instanceof JZZ.MIDI.SMF)) {
+      try {
+        smf = new JZZ.MIDI.SMF(smf);
+      }
+      catch(err) {
+        console.error('Error:', err.message);
+        return;
+      }
+    }
     play(smf, process.argv[2]);
   }
-  module.exports.write = function(smf, name) {
+  module.exports.write = function(data, name) {
+    if (data instanceof JZZ.MIDI.SMF) {
+      data = data.dump();
+    }
+    else {
+      try {
+        var smf = new JZZ.MIDI.SMF(data);
+      }
+      catch(err) {
+        console.error('Error:', err.message);
+        return;
+      }
+    }
     if (typeof name == 'undefined') {
       name = path.basename(process.argv[1]);
       name = name.split('.').slice(0, -1).join('.');
       name = path.join(__dirname, 'midi', name + '.mid');
     }
     console.log('Writing ' + name + ' ...');
-    fs.writeFileSync(name, smf.dump(), 'binary');
+    fs.writeFileSync(name, data, 'binary');
   }
 }
 else {
@@ -31,8 +52,6 @@ else {
       console.error('Error:', err.message);
       process.exit(-1);
     }
-    var warn = smf.validate();
-    if (warn) console.log(warn);
     play(smf, process.argv[3]);
   }
 }
@@ -55,7 +74,6 @@ function usage(node, self) {
   });
 }
 
-function print(msg) { console.log(msg.toString()); }
 function log(msg) {
   if (msg.ff == 1) console.log(msg.dd);
   if (msg.ff == 2) console.log('(by ' + msg.dd + ')\n');
@@ -64,25 +82,24 @@ function log(msg) {
 
 function play(smf, out) {
   var player = smf.player();
+  var warn = smf.validate();
+  if (warn) console.log('Warning:', warn);
   if (out == 'print') {
-    player.connect(print);
-    player.play();
+    console.log(smf.toString());
     return;
   }
   JZZ().or(function() {
     console.error('Cannot start MIDI engine!');
     if (!out) {
-      player.connect(print);
-      player.play();
+      console.log(smf.toString());
     }
   }).and(function() {
     this.openMidiOut(out).or(function() {
       if (!out) {
-        player.connect(print);
-        player.play();
+        console.log(smf.toString());
       }
       else {
-        console.error('Cannot open port', out);
+        console.error('Cannot open port:', out);
       }
     }).and(function() {
       player.connect(this);
