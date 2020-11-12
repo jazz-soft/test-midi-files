@@ -1,2 +1,2 @@
 # test-midi-files
-coming soon...
+A framework for producing test MIDI files

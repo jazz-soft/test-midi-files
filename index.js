@@ -83,7 +83,7 @@ function log(msg) {
 function play(smf, out) {
   var player = smf.player();
   var warn = smf.validate();
-  if (warn) console.log('Warning:', warn);
+  if (warn) for (var i = 0; i < warn.length; i++) console.log('WARNING: ' + warn[i]);
   if (out == 'print') {
     console.log(smf.toString());
     return;
