@@ -8,7 +8,9 @@
 <script src="node_modules/jzz-gui-Player/javascript/JZZ.gui.Player.js"></script>
 <style>
 .half { width:50%; float:left; }
-#log { height:20em; overflow-x:auto; margin-right:2em; white-space:pre-wrap;}
+.title { font-size:x-large; font-weight:bold; }
+.author { font-size:small; font-style:italic; }
+#log { height:20em; overflow-x:auto; margin-right:2em; white-space:pre-wrap; }
 </style>
 </head>
 
@@ -22,7 +24,7 @@ var content = document.getElementById('content');
 content.innerHTML = 'Please run `<tt>npm install</tt>` !';
 JZZ.synth.Tiny.register('Web Audio');
 content.innerHTML = '\
-<div id=player></div>\
+<div><span id=player></span></div>\
 <div><span class=half>\
 <pre id=log>Please select a file...</pre>\
 </span>\
@@ -33,17 +35,16 @@ content.innerHTML = '\
 ';
 var log = document.getElementById('log');
 
-var player = JZZ.gui.Player({ at: 'player', file: true });
-player.onLoad = getInfo;
-player.onPlay = function() { clearLog(); }
+var player = JZZ.gui.Player({ at: 'player', file: true, loop: false });
+player.onLoad = showInfo;
+player.onPlay = clearLog;
 player.connect(function(msg) {
   if (msg.ff == 1) printLog(msg.dd);
-  if (msg.ff == 2) printLog('<span class=author>(by ' + escape(msg.dd) + ')</span>');
+  if (msg.ff == 2) printLog('<span class=author>(' + escape(msg.dd) + ')</span>\n');
   if (msg.ff == 3) printLog('<span class=title>' + escape(msg.dd) + '</span>');
 });
 
 var text = [];
-var info = [];
 function clearLog() {
   text = [];
   log.innerHTML = '';
@@ -54,25 +55,25 @@ function printLog(s) {
   log.innerHTML = text.join('\n');
   log.scrollTop = log.scrollHeight;
 }
-function getInfo(smf) {
-  info = [];
+function showInfo(smf) {
+  text = [];
   var i, ff1, ff2, ff3;
   var track = smf[0];
   for (i = 0; i < track.length; i++) {
     if (track[i].ff == 1 && !ff1) {
       ff1 = true;
-      info.push(escape(track[i].dd));
+      text.push(escape(track[i].dd));
     }
     if (track[i].ff == 2 && !ff2) {
       ff2 = true;
-      info.push('<span class=author>' + escape(track[i].dd) + '</span>');
+      text.push('<span class=author>(' + escape(track[i].dd) + ')</span>\n');
     }
     if (track[i].ff == 3 && !ff3) {
       ff3 = true;
-      info.push('<span class=title>' + escape(track[i].dd) + '</span>');
+      text.push('<span class=title>' + escape(track[i].dd) + '</span>');
     }
   }
-  log.innerHTML = info.join('\n');
+  log.innerHTML = text.join('\n');
   log.scrollTop = log.scrollHeight;
 }
 </script>

@@ -76,7 +76,7 @@ function usage(node, self) {
 
 function log(msg) {
   if (msg.ff == 1) console.log(msg.dd);
-  if (msg.ff == 2) console.log('(by ' + msg.dd + ')\n');
+  if (msg.ff == 2) console.log('(' + msg.dd + ')\n');
   if (msg.ff == 3) console.log('\n##### ' + msg.dd + ' #####\n');
 }
 
