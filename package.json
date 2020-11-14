@@ -13,7 +13,7 @@
   "author": "jazz-soft (https://jazz-soft.net)",
   "dependencies": {
     "jzz": "^1.1.4",
-    "jzz-gui-player": "^1.4.4",
+    "jzz-gui-player": "^1.4.5",
     "jzz-midi-smf": "^1.4.1",
     "jzz-synth-tiny": "^1.2.0"
   },
