@@ -102,6 +102,7 @@ function play(smf, out) {
         console.error('Cannot open port:', out);
       }
     }).and(function() {
+      console.log('MIDI-Out port:', this.name());
       player.connect(this);
       player.connect(log);
       player.onEnd = function() { console.log('\ndone!'); };
