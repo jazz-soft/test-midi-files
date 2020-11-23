@@ -18,7 +18,7 @@ e.g.:
 `node index.js midi/test-c-major-scale.mid "Microsoft GS Wavetable Synth"`  
 -- play MIDI file to the specified MIDI-Out port.  
 `node index.js midi/test-c-major-scale.mid print`  
--- print MIDI file.
+-- print MIDI file contents.
 
 ## Playing MIDI files in browser
 Open `index.html`
