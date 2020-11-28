@@ -30,4 +30,4 @@ Run `node code/your-test-name.js`, it will create a MIDI file with the same name
 
 If you believe your test will be useful for others, please don't hesitate to check it into this repository.
 
-## Work in progress... More stuff to come!
+## More stuff to come...

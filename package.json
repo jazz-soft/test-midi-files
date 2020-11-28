@@ -15,7 +15,7 @@
     "jzz": "^1.1.6",
     "jzz-gui-player": "^1.4.5",
     "jzz-midi-smf": "^1.4.2",
-    "jzz-synth-tiny": "^1.2.1"
+    "jzz-synth-tiny": "^1.2.2"
   },
   "repository": {
     "type": "git",
