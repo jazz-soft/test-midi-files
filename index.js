@@ -84,6 +84,7 @@ function play(smf, out) {
   var player = smf.player();
   var warn = smf.validate();
   if (warn) for (var i = 0; i < warn.length; i++) console.log('WARNING: ' + warn[i]);
+  if (out == 'null') return;
   if (out == 'print') {
     console.log(smf.toString());
     return;

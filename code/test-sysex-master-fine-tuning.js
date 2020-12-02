@@ -7,7 +7,7 @@ var trk = new JZZ.MIDI.SMF.MTrk();
 smf.push(trk);
 trk.smfSeqName('SysEx Master Fine Tuning Test')
   .smfCopyright('https://jazz-soft.net')
-  .smfText('Testing the Master Fine Tuning via the GM2 Deice Control SysEx.\n')
+  .smfText('Testing the Master Fine Tuning via the GM2 Device Control SysEx.\n')
   .smfText('You must hear a quarter-tone sequence.')
   .send([0xF0, 0x7F, 0x7F, 0x04, 0x03, 0x00, 0x00, 0xF7])
   .noteOn(0, 'C5', 127).tick(96).noteOff(0, 'C5')

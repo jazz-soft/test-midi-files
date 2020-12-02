@@ -7,7 +7,7 @@ var trk = new JZZ.MIDI.SMF.MTrk();
 smf.push(trk);
 trk.smfSeqName('SysEx Master Coarse Tuning Test')
   .smfCopyright('https://jazz-soft.net')
-  .smfText('Testing the Master Coarse Tuning via the GM2 Deice Control SysEx.\n')
+  .smfText('Testing the Master Coarse Tuning via the GM2 Device Control SysEx.\n')
   .smfText('You must hear a C-Major scale.')
   .send([0xF0, 0x7F, 0x7F, 0x04, 0x04, 0x00, 0x40, 0xF7])
   .noteOn(0, 'C5', 127).tick(96).noteOff(0, 'C5')
