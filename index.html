@@ -38,13 +38,14 @@ var text = [];
 var log = document.getElementById('log');
 printLog('Please select a file...');
 
-var player = JZZ.gui.Player({ at: 'player', file: true, loop: false });
+var player = JZZ.gui.Player({ at: 'player', file: true, loop: false, sndoff: false });
 player.onLoad = showInfo;
 player.onPlay = clearLog;
 player.connect(function(msg) {
   if (msg.ff == 1) printLog(msg.dd);
   if (msg.ff == 2) printLog('<span class=author>(' + escape(msg.dd) + ')</span>\n');
   if (msg.ff == 3) printLog('<span class=title>' + escape(msg.dd) + '</span>');
+  console.log(msg.toString());
 });
 
 function clearLog() {

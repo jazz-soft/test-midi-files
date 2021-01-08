@@ -12,10 +12,10 @@
   ],
   "author": "jazz-soft (https://jazz-soft.net)",
   "dependencies": {
-    "jzz": "^1.1.6",
-    "jzz-gui-player": "^1.4.5",
-    "jzz-midi-smf": "^1.4.2",
-    "jzz-synth-tiny": "^1.2.3"
+    "jzz": "^1.1.8",
+    "jzz-gui-player": "^1.4.6",
+    "jzz-midi-smf": "^1.4.3",
+    "jzz-synth-tiny": "^1.2.4"
   },
   "devDependencies": {
     "grunt": "^1.3.0"
