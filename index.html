@@ -4,6 +4,7 @@
 <title>Test MIDI Files</title>
 <script src="node_modules/jzz/javascript/JZZ.js"></script>
 <script src="node_modules/jzz-synth-tiny/javascript/JZZ.synth.Tiny.js"></script>
+<script src="node_modules/jzz-midi-gear/javascript/JZZ.midi.Gear.js"></script>
 <script src="node_modules/jzz-midi-smf/javascript/JZZ.midi.SMF.js"></script>
 <script src="node_modules/jzz-gui-Player/javascript/JZZ.gui.Player.js"></script>
 <style>
@@ -11,6 +12,7 @@
 .title { font-size:x-large; font-weight:bold; }
 .author { font-size:small; font-style:italic; }
 .red { color:#d00; font-weight:bold; }
+.blue { color:#00d; font-weight:bold; }
 #log { height:20em; overflow-x:auto; margin-right:2em; white-space:pre-wrap; }
 </style>
 </head>
@@ -37,6 +39,11 @@ content.innerHTML = '\
 var text = [];
 var log = document.getElementById('log');
 printLog('Please select a file...');
+
+JZZ({ sysex: true, degrade: true }).and(function() {
+  var inputs = this.info().inputs;
+  for (var i in inputs) this.openMidiIn(i).connect(gotmsg);
+});
 
 var player = JZZ.gui.Player({ at: 'player', file: true, loop: false, sndoff: false });
 player.onLoad = showInfo;
@@ -78,6 +85,25 @@ function showInfo(smf) {
   }
   log.innerHTML = text.join('\n');
   log.scrollTop = log.scrollHeight;
+}
+function gotmsg(msg) {
+  if (msg.isSysEx()) {
+    var name = this.name();
+    printLog('<span class=blue>' + name + ': ' + msg.toString() + '</span>');
+    if (msg.isIdResponse()) {
+      var x = name.length - 6; x = x > 0 ? ' '.repeat(x) : '';
+      var gear = msg.gearInfo();
+      printLog(x + '<span class=blue> brand: ' + gear.brand + '</span>');
+      printLog(x + '<span class=blue> model: ' + gear.model + '</span>');
+      printLog(x + '<span class=blue>device: ' + gear.descr + '</span>');
+      if (!gear.model) {
+        printLog('<span class=red> We could not identify your MIDI device! :(</span>');
+        printLog('<span class=blue> Plese consider sharing the model info</span>');
+        printLog('<span class=blue> at <a target=_blank href=https://github.com/jazz-soft/JZZ-midi-Gear>https://github.com/jazz-soft/JZZ-midi-Gear</a>!</span>');
+      }
+    }
+  }
+  console.log(this.name() + ': ' + msg);
 }
 
 function button(where, title) {
@@ -130,7 +156,7 @@ reset.addEventListener('click', function() {
 mute.addEventListener('click', function() {
   if (player.connected()) {
     for (var c = 0; c < 16; c++) player.allSoundOff(c);
-    printLog('All Sound Off');
+    printLog('<span class=blue>All Sound Off</span>');
   }
 });
 </script>
