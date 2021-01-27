@@ -8,11 +8,12 @@
   },
   "keywords": [
     "test",
+    "testing",
     "midi"
   ],
   "author": "jazz-soft (https://jazz-soft.net)",
   "dependencies": {
-    "jzz": "^1.1.9",
+    "jzz": "^1.2.1",
     "jzz-gui-player": "^1.4.6",
     "jzz-midi-gear": "^1.1.7",
     "jzz-midi-smf": "^1.4.4",
