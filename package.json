@@ -15,7 +15,7 @@
   "dependencies": {
     "jzz": "^1.2.1",
     "jzz-gui-player": "^1.4.6",
-    "jzz-midi-gear": "^1.1.7",
+    "jzz-midi-gear": "^1.1.8",
     "jzz-midi-gm": "^1.1.9",
     "jzz-midi-smf": "^1.4.4",
     "jzz-synth-tiny": "^1.2.4"

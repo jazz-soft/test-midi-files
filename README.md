@@ -30,4 +30,19 @@ Run `node code/your-test-name.js`, it will create a MIDI file with the same name
 
 If you believe your test will be useful for others, please don't hesitate to check it into this repository.
 
-## More stuff to come...
+## Test files
+- [**test-c-major-scale.mid**](https://github.com/jazz-soft/test-midi-files/raw/main/midi/test-c-major-scale.mid)
+- [**test-all-gm-percussion.mid**](https://github.com/jazz-soft/test-midi-files/raw/main/midi/test-all-gm-percussion.mid)
+- [**test-all-gm-sounds.mid**](https://github.com/jazz-soft/test-midi-files/raw/main/midi/test-all-gm-sounds.mid)
+- [**test-control-40-damper.mid**](https://github.com/jazz-soft/test-midi-files/raw/main/midi/test-control-40-damper.mid)
+- [**test-control-41-portamento.mid**](https://github.com/jazz-soft/test-midi-files/raw/main/midi/test-control-41-portamento.mid)
+- [**test-rpn-00-00-pitch-bend-range.mid**](https://github.com/jazz-soft/test-midi-files/raw/main/midi/test-rpn-00-00-pitch-bend-range.mid)
+- [**test-rpn-00-01-fine-tuning.mid**](https://github.com/jazz-soft/test-midi-files/raw/main/midi/test-rpn-00-01-fine-tuning.mid)
+- [**test-rpn-00-02-coarse-tuning.mid**](https://github.com/jazz-soft/test-midi-files/raw/main/midi/test-rpn-00-02-coarse-tuning.mid)
+- [**test-sysex-7e-06-01-id-request.mid**](https://github.com/jazz-soft/test-midi-files/raw/main/midi/test-sysex-7e-06-01-id-request.mid)
+- [**test-sysex-7f-04-03-master-fine-tuning.mid**](https://github.com/jazz-soft/test-midi-files/raw/main/midi/test-sysex-7f-04-03-master-fine-tuning.mid)
+- [**test-sysex-7f-04-04-master-coarse-tuning.mid**](https://github.com/jazz-soft/test-midi-files/raw/main/midi/test-sysex-7f-04-04-master-coarse-tuning.mid)
+- [**test-sysex-7x-08-0x-scale-tuning.mid**](https://github.com/jazz-soft/test-midi-files/raw/main/midi/test-sysex-7x-08-0x-scale-tuning.mid)
+- [**test-corrupt-file-extra-byte.mid**](https://github.com/jazz-soft/test-midi-files/raw/main/midi/test-corrupt-file-extra-byte.mid)
+- [**test-corrupt-file-missing-byte.mid**](https://github.com/jazz-soft/test-midi-files/raw/main/midi/test-corrupt-file-missing-byte.mid)
+## More to come...
