@@ -34,6 +34,7 @@ If you believe your test will be useful for others, please don't hesitate to che
 - [**test-c-major-scale.mid**](https://github.com/jazz-soft/test-midi-files/raw/main/midi/test-c-major-scale.mid)
 - [**test-all-gm-percussion.mid**](https://github.com/jazz-soft/test-midi-files/raw/main/midi/test-all-gm-percussion.mid)
 - [**test-all-gm-sounds.mid**](https://github.com/jazz-soft/test-midi-files/raw/main/midi/test-all-gm-sounds.mid)
+- [**test-control-00-20-bank-select.mid**](https://github.com/jazz-soft/test-midi-files/raw/main/midi/test-control-00-20-bank-select.mid)
 - [**test-control-40-damper.mid**](https://github.com/jazz-soft/test-midi-files/raw/main/midi/test-control-40-damper.mid)
 - [**test-control-41-portamento.mid**](https://github.com/jazz-soft/test-midi-files/raw/main/midi/test-control-41-portamento.mid)
 - [**test-rpn-00-00-pitch-bend-range.mid**](https://github.com/jazz-soft/test-midi-files/raw/main/midi/test-rpn-00-00-pitch-bend-range.mid)
