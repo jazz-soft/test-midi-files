@@ -20,7 +20,7 @@ trk = trk.tick(96).rpn(0, 0).data(24, 0).smfText('Pitch Bend range is set to plu
 trk = bend(trk);
 trk = trk.tick(96).rpn(0, 0).data(36, 0).smfText('Pitch Bend range is set to plus/minus three octaves.');
 trk = bend(trk);
-trk.rpn(0, 0).data(2, 0) // back to default
+trk.rpn(0, 0).data(2, 0) // back to the default
   .smfText('Thank you!');
 
 TEST.write(smf);
