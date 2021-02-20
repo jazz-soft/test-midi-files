@@ -13,9 +13,9 @@
   ],
   "author": "jazz-soft (https://jazz-soft.net)",
   "dependencies": {
-    "jzz": "^1.2.2",
+    "jzz": "^1.2.3",
     "jzz-gui-player": "^1.4.6",
-    "jzz-midi-gear": "^1.1.8",
+    "jzz-midi-gear": "^1.1.9",
     "jzz-midi-gm": "^1.1.9",
     "jzz-midi-smf": "^1.4.4",
     "jzz-synth-tiny": "^1.2.4"
