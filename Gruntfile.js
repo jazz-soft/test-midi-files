@@ -15,12 +15,17 @@ module.exports = function(grunt) {
       a = list[i].split('/');
       if (a.length == 2) midis.push(a[1]);
     }
+    function group(s) {
+      if (s == 'test-c-major-scale.mid') return 0;
+      if (s.includes('karaoke')) return 2;
+      if (s.includes('non-midi')) return 3;
+      if (s.includes('corrupt')) return 4;
+      return 1;
+    }
     midis.sort(function(a, b) {
-      if (a == 'test-c-major-scale.mid') return -1;
-      if (b == 'test-c-major-scale.mid') return 1;
-      if (a.includes('corrupt') && !b.includes('corrupt')) return 1;
-      if (b.includes('corrupt') && !a.includes('corrupt')) return -1;
-      return a.localeCompare(b);
+      var aa = group(a);
+      var bb = group(b);
+      return aa == bb ? a.localeCompare(b) : aa - bb;
     });
     var rdme = grunt.file.read('README.md').split(/\r?\n/);
     var out = [];

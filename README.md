@@ -53,6 +53,8 @@ If you believe your test will be useful for others, please don't hesitate to che
 - [**test-sysex-7f-04-03-master-fine-tuning.mid**](https://github.com/jazz-soft/test-midi-files/raw/main/midi/test-sysex-7f-04-03-master-fine-tuning.mid)
 - [**test-sysex-7f-04-04-master-coarse-tuning.mid**](https://github.com/jazz-soft/test-midi-files/raw/main/midi/test-sysex-7f-04-04-master-coarse-tuning.mid)
 - [**test-sysex-7x-08-0x-scale-tuning.mid**](https://github.com/jazz-soft/test-midi-files/raw/main/midi/test-sysex-7x-08-0x-scale-tuning.mid)
+- [**test-karaoke-kar.mid**](https://github.com/jazz-soft/test-midi-files/raw/main/midi/test-karaoke-kar.mid)
+- [**test-non-midi-track.mid**](https://github.com/jazz-soft/test-midi-files/raw/main/midi/test-non-midi-track.mid)
 - [**test-corrupt-file-extra-byte.mid**](https://github.com/jazz-soft/test-midi-files/raw/main/midi/test-corrupt-file-extra-byte.mid)
 - [**test-corrupt-file-missing-byte.mid**](https://github.com/jazz-soft/test-midi-files/raw/main/midi/test-corrupt-file-missing-byte.mid)
 ## More to come...

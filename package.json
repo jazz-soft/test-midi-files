@@ -17,7 +17,7 @@
     "jzz-gui-player": "^1.4.6",
     "jzz-midi-gear": "^1.1.9",
     "jzz-midi-gm": "^1.1.9",
-    "jzz-midi-smf": "^1.4.4",
+    "jzz-midi-smf": "^1.4.5",
     "jzz-synth-tiny": "^1.2.4"
   },
   "devDependencies": {
