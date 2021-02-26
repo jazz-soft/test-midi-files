@@ -14,7 +14,7 @@ trk0.smfSeqName('Karaoke .KAR Test') // The name of the first track serves as th
 
 trk1.smfSeqName('Lyrics') // The names of other tracks don't have any particular meaning
   .smfText('@TMary Was A Little Lame') // Karaoke player will recognize this track by the "@T" tag
-  .tick(0).smfText('\\Ma') // New verse starts with a backslash "\"
+  .smfText('\\Ma') // New verse starts with a backslash "\"
   .tick(75).smfText('ry ')
   .tick(25).smfText('was ')
   .tick(50).smfText('a ')
@@ -43,7 +43,7 @@ trk1.smfSeqName('Lyrics') // The names of other tracks don't have any particular
 
 trk2.ch(0) // all subsequent messahes will go to channel 0
   .program(0x0b) // set channel 0 program to vibraphone
-  .tick(0).note('E5', 127, 75)
+  .note('E5', 127, 75)
   .tick(75).note('D5', 127, 25)
   .tick(25).note('C5', 127, 50)
   .tick(50).note('D5', 127, 50)

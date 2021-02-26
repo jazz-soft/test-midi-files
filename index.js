@@ -22,7 +22,7 @@ if (module.parent) {
     }
     else {
       try {
-        var smf = new JZZ.MIDI.SMF(data);
+        new JZZ.MIDI.SMF(data);
       }
       catch(err) {
         console.error('Error:', err.message);

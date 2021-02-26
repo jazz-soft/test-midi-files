@@ -4,6 +4,7 @@
   "description": "A framework for producing test MIDI files",
   "main": "index.js",
   "scripts": {
+    "lint": "eslint .",
     "test": "node ."
   },
   "keywords": [
@@ -21,6 +22,7 @@
     "jzz-synth-tiny": "^1.2.4"
   },
   "devDependencies": {
+    "eslint": "^7.20.0",
     "grunt": "^1.3.0"
   },
   "repository": {
