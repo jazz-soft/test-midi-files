@@ -19,7 +19,8 @@ module.exports = function(grunt) {
       if (s == 'test-c-major-scale.mid') return 0;
       if (s.includes('karaoke')) return 2;
       if (s.includes('non-midi')) return 3;
-      if (s.includes('corrupt')) return 4;
+      if (s.includes('vlq')) return 4;
+      if (s.includes('corrupt')) return 5;
       return 1;
     }
     midis.sort(function(a, b) {
