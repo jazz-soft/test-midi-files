@@ -14,16 +14,16 @@
   ],
   "author": "jazz-soft (https://jazz-soft.net)",
   "dependencies": {
-    "jzz": "^1.2.5",
-    "jzz-gui-player": "^1.4.7",
-    "jzz-midi-gear": "^1.1.9",
-    "jzz-midi-gm": "^1.1.9",
-    "jzz-midi-smf": "^1.4.9",
-    "jzz-synth-tiny": "^1.2.5"
+    "jzz": "^1.3.3",
+    "jzz-gui-player": "^1.4.9",
+    "jzz-midi-gear": "^1.2.0",
+    "jzz-midi-gm": "^1.2.0",
+    "jzz-midi-smf": "^1.5.2",
+    "jzz-synth-tiny": "^1.2.6"
   },
   "devDependencies": {
-    "eslint": "^7.22.0",
-    "grunt": "^1.3.0"
+    "eslint": "^7.28.0",
+    "grunt": "^1.4.1"
   },
   "repository": {
     "type": "git",
@@ -32,5 +32,5 @@
   "homepage": "https://github.com/jazz-soft/test-midi-files",
   "bugs": "https://github.com/jazz-soft/test-midi-files/issues",
   "license": "MIT",
-  "priate": true
+  "private": true
 }

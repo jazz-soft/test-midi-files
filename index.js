@@ -17,10 +17,20 @@ if (module.parent) {
     play(smf, process.argv[2]);
   }
   module.exports.write = function(data, name) {
+    var ext = '.mid';
     if (data instanceof JZZ.MIDI.SMF) {
       data = data.dump();
     }
+    else if (data instanceof JZZ.MIDI.SYX) {
+      data = data.dump();
+      ext = '.syx';
+    }
     else {
+      try {
+        new JZZ.MIDI.SYX(data);
+        ext = '.syx';
+      }
+      catch(err) {}
       try {
         new JZZ.MIDI.SMF(data);
       }
@@ -32,21 +42,33 @@ if (module.parent) {
     if (typeof name == 'undefined') {
       name = path.basename(process.argv[1]);
       name = name.split('.').slice(0, -1).join('.');
-      name = path.join(__dirname, 'midi', name + '.mid');
+      name = path.join(__dirname, 'midi', name + ext);
     }
     console.log('Writing ' + name + ' ...');
     fs.writeFileSync(name, data, 'binary');
   }
 }
 else {
+  var data;
+  var smf;
   if (process.argv.length < 3) {
     usage(process.argv[0], process.argv[1]);
     process.exit(0);
   }
   else {
     try {
-      var data = fs.readFileSync(process.argv[2], 'binary');
-      var smf = new JZZ.MIDI.SMF(data);
+      data = fs.readFileSync(process.argv[2], 'binary');
+    }
+    catch(err) {
+      console.error('Error:', err.message);
+      process.exit(-1);
+    }
+    try {
+      smf = new JZZ.MIDI.SYX(data);
+    }
+    catch(err) {}
+    try {
+      if (!smf) smf = new JZZ.MIDI.SMF(data);
     }
     catch(err) {
       console.error('Error:', err.message);
@@ -83,8 +105,10 @@ function log(msg) {
 function play(smf, out) {
   if (out == 'null') return;
   var player = smf.player();
-  var warn = smf.validate();
-  if (warn) for (var i = 0; i < warn.length; i++) console.log('WARNING: ' + warn[i]);
+  if (smf.validate) {
+    var warn = smf.validate();
+    if (warn) for (var i = 0; i < warn.length; i++) console.log('WARNING: ' + warn[i]);
+  }
   if (out == 'print') {
     console.log(smf.toString());
     return;
