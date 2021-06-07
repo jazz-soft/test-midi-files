@@ -5,7 +5,11 @@ require('jzz-midi-smf')(JZZ);
 
 if (module.parent) {
   module.exports.play = function(smf) {
-    if (!(smf instanceof JZZ.MIDI.SMF)) {
+    if (!(smf instanceof JZZ.MIDI.SMF) && !(smf instanceof JZZ.MIDI.SYX)) {
+      try {
+        smf = new JZZ.MIDI.SYX(smf);
+      }
+      catch(err) {}
       try {
         smf = new JZZ.MIDI.SMF(smf);
       }
@@ -41,7 +45,7 @@ if (module.parent) {
     }
     if (typeof name == 'undefined') {
       name = path.basename(process.argv[1]);
-      name = name.split('.').slice(0, -1).join('.');
+      if (name.toLowerCase().endsWith('.js')) name = name.substr(0, name.length - 3);
       name = path.join(__dirname, 'midi', name + ext);
     }
     console.log('Writing ' + name + ' ...');

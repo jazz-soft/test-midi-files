@@ -21,6 +21,7 @@ module.exports = function(grunt) {
       if (s.includes('non-midi')) return 3;
       if (s.includes('vlq')) return 4;
       if (s.includes('corrupt')) return 5;
+      if (s.includes('syx')) return 5;
       return 1;
     }
     midis.sort(function(a, b) {
