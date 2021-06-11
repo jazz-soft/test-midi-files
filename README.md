@@ -46,6 +46,7 @@ If you believe your test will be useful for others, please don't hesitate to che
 - [**test-rpn-00-01-fine-tuning.mid**](https://github.com/jazz-soft/test-midi-files/raw/main/midi/test-rpn-00-01-fine-tuning.mid)
 - [**test-rpn-00-02-coarse-tuning.mid**](https://github.com/jazz-soft/test-midi-files/raw/main/midi/test-rpn-00-02-coarse-tuning.mid)
 - [**test-rpn-00-05-modulation-depth-range.mid**](https://github.com/jazz-soft/test-midi-files/raw/main/midi/test-rpn-00-05-modulation-depth-range.mid)
+- [**test-smpte-offset.mid**](https://github.com/jazz-soft/test-midi-files/raw/main/midi/test-smpte-offset.mid)
 - [**test-sysex-7e-06-01-id-request.mid**](https://github.com/jazz-soft/test-midi-files/raw/main/midi/test-sysex-7e-06-01-id-request.mid)
 - [**test-sysex-7e-09-01-gm1-enable.mid**](https://github.com/jazz-soft/test-midi-files/raw/main/midi/test-sysex-7e-09-01-gm1-enable.mid)
 - [**test-sysex-7e-09-02-gm-disable.mid**](https://github.com/jazz-soft/test-midi-files/raw/main/midi/test-sysex-7e-09-02-gm-disable.mid)
