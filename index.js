@@ -5,18 +5,17 @@ require('jzz-midi-smf')(JZZ);
 
 if (module.parent) {
   module.exports.play = function(smf) {
-    if (!(smf instanceof JZZ.MIDI.SMF) && !(smf instanceof JZZ.MIDI.SYX)) {
-      try {
-        smf = new JZZ.MIDI.SYX(smf);
-      }
-      catch(err) {}
-      try {
-        smf = new JZZ.MIDI.SMF(smf);
-      }
-      catch(err) {
-        console.error('Error:', err.message);
-        return;
-      }
+    if (smf instanceof JZZ.MIDI.SMF || smf instanceof JZZ.MIDI.SYX) smf = smf.dump();
+    try {
+      smf = new JZZ.MIDI.SYX(smf);
+    }
+    catch(err) {}
+    try {
+      smf = new JZZ.MIDI.SMF(smf);
+    }
+    catch(err) {
+      console.error('Error:', err.message);
+      return;
     }
     play(smf, process.argv[2]);
   }
@@ -114,18 +113,18 @@ function play(smf, out) {
     if (warn) for (var i = 0; i < warn.length; i++) console.log('WARNING: ' + warn[i]);
   }
   if (out == 'print') {
-    console.log(smf.toString());
+    console.log(printSMF(smf));
     return;
   }
   JZZ().or(function() {
     console.error('Cannot start MIDI engine!');
     if (!out) {
-      console.log(smf.toString());
+      console.log(printSMF(smf));
     }
   }).and(function() {
     this.openMidiOut(out).or(function() {
       if (!out) {
-        console.log(smf.toString());
+        console.log(printSMF(smf));
       }
       else {
         console.error('Cannot open port:', out);
@@ -138,4 +137,33 @@ function play(smf, out) {
       player.play();
     });
   });
+}
+
+function printSMF(smf) {
+  if (smf instanceof JZZ.MIDI.SYX) return smf.toString();
+  var i;
+  var a = [[smf._off, ' SMF:'], [smf._off_type, '   type: ' + smf.type], [smf._off_ntrk, '   tracks: ' + smf.ntrk]];
+  if (smf.ppqn) a.push([smf._off_ppqn, '   ppqn: ' + smf.ppqn]);
+  else a = a.concat([[smf._off_fps, '   fps: ' + smf.fps], [smf._off_ppf, '   ppf: ' + smf.ppf]]);
+  for (i = 0; i < smf.length; i++) a = a.concat(printChunk(smf[i]));
+  return format(a);
+}
+
+function printChunk(chunk) {
+  if (chunk instanceof JZZ.MIDI.SMF.MTrk) return printTrk(chunk);
+  return [[chunk._off, ' ' + chunk.type + ': ' + chunk.data.length + ' bytes']];
+}
+
+function printTrk(trk) {
+  var a = [[trk._off, ' MTrk:']];
+  for (var i = 0; i < trk.length; i++) a.push([trk[i]._off, '   ' + trk[i].tt + ': ' + trk[i].toString()]);
+  return a;
+}
+
+function format(a) {
+  var m = a[a.length - 1][0].toString().length;
+  for (var i = 0; i < a.length; i++) {
+    a[i] = '[' + a[i][0].toString().padStart(m) + ']' + a[i][1];
+  }
+  return a.join('\n');
 }
