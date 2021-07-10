@@ -14,11 +14,11 @@
   ],
   "author": "jazz-soft (https://jazz-soft.net)",
   "dependencies": {
-    "jzz": "^1.3.5",
+    "jzz": "^1.3.6",
     "jzz-gui-player": "^1.5.0",
     "jzz-midi-gear": "^1.2.1",
     "jzz-midi-gm": "^1.2.1",
-    "jzz-midi-smf": "^1.5.4",
+    "jzz-midi-smf": "^1.5.5",
     "jzz-synth-tiny": "^1.2.6"
   },
   "devDependencies": {
