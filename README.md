@@ -10,7 +10,7 @@ See also:
 Please run `npm install` to make sure all dependencies are up to date.
 
 ## Playing/viewing MIDI files
-`node index.js <filename.mid> [<midi-out port> | print]`
+`node index.js <filename.mid> [<midi-out port> | print | inspect]`
 
 e.g.:  
 `node index.js midi/test-c-major-scale.mid`  
@@ -18,7 +18,9 @@ e.g.:
 `node index.js midi/test-c-major-scale.mid "Microsoft GS Wavetable Synth"`  
 -- play MIDI file to the specified MIDI-Out port.  
 `node index.js midi/test-c-major-scale.mid print`  
--- print MIDI file contents.
+-- print MIDI file contents.  
+`node index.js midi/test-c-major-scale.mid inspect`  
+-- same as `print`, but also outputs the data offset within the MIDI file.
 
 ## Playing MIDI files in browser
 Open `index.html`

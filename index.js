@@ -83,7 +83,7 @@ else {
 
 function usage(node, self) {
   console.log('USAGE:')
-  console.log('    node ' + self + ' <filename.mid> [<midi-out port> | print]');
+  console.log('    node ' + self + ' <filename.mid> [<midi-out port> | print | inspect]');
   JZZ().or(function() {
     console.log('No ports available...');
   }).and(function() {
@@ -113,18 +113,22 @@ function play(smf, out) {
     if (warn) for (var i = 0; i < warn.length; i++) console.log('WARNING: ' + warn[i]);
   }
   if (out == 'print') {
+    console.log(smf.toString());
+    return;
+  }
+  if (out == 'inspect') {
     console.log(printSMF(smf));
     return;
   }
   JZZ().or(function() {
     console.error('Cannot start MIDI engine!');
     if (!out) {
-      console.log(printSMF(smf));
+      console.log(smf.toString());
     }
   }).and(function() {
     this.openMidiOut(out).or(function() {
       if (!out) {
-        console.log(printSMF(smf));
+        console.log(smf.toString());
       }
       else {
         console.error('Cannot open port:', out);
