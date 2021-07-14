@@ -27,11 +27,11 @@ for (var i = 0; i < bad.length - 2; i++) {
 var smf = new JZZ.MIDI.SMF(0, 96);
 var trk = new JZZ.MIDI.SMF.MTrk();
 smf.push(trk);
-trk.smfSeqName('Corrupt File: Extra Byte')
+trk.smfSeqName('Illegal MIDI messages')
   .smfCopyright('https://jazz-soft.net')
   .smfText('This file contains illegal MIDI messages. Most players consider it invalid.\n')
-  .send(sysex) // placeholder
   .smfText('You must hear a C-Major scale.')
+  .send(sysex) // placeholder
   .noteOn(0, 'C5', 127).tick(96).noteOff(0, 'C5')
   .noteOn(0, 'D5', 127).tick(96).noteOff(0, 'D5')
   .noteOn(0, 'E5', 127).tick(96).noteOff(0, 'E5')
