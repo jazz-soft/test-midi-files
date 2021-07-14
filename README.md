@@ -65,7 +65,6 @@ If you believe your test will be useful for others, please don't hesitate to che
 - [**test-corrupt-file-missing-byte.mid**](https://github.com/jazz-soft/test-midi-files/raw/main/midi/test-corrupt-file-missing-byte.mid)
 - [**test-illegal-message-all.mid**](https://github.com/jazz-soft/test-midi-files/raw/main/midi/test-illegal-message-all.mid)
 - [**test-illegal-message-f1-xx.mid**](https://github.com/jazz-soft/test-midi-files/raw/main/midi/test-illegal-message-f1-xx.mid)
-- [**test-illegal-message-f1.mid**](https://github.com/jazz-soft/test-midi-files/raw/main/midi/test-illegal-message-f1.mid)
 - [**test-illegal-message-f2-xx-xx.mid**](https://github.com/jazz-soft/test-midi-files/raw/main/midi/test-illegal-message-f2-xx-xx.mid)
 - [**test-illegal-message-f3-xx.mid**](https://github.com/jazz-soft/test-midi-files/raw/main/midi/test-illegal-message-f3-xx.mid)
 - [**test-illegal-message-f4.mid**](https://github.com/jazz-soft/test-midi-files/raw/main/midi/test-illegal-message-f4.mid)
