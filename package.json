@@ -19,7 +19,7 @@
     "jzz-midi-gear": "^1.2.1",
     "jzz-midi-gm": "^1.2.1",
     "jzz-midi-smf": "^1.5.6",
-    "jzz-synth-tiny": "^1.2.6"
+    "jzz-synth-tiny": "^1.2.7"
   },
   "devDependencies": {
     "eslint": "^7.30.0",
