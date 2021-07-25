@@ -5,7 +5,7 @@ require('jzz-midi-smf')(JZZ);
 var smf = new JZZ.MIDI.SMF(1);
 var trk0 = new JZZ.MIDI.SMF.MTrk();
 smf.push(trk0);
-trk0.smfSeqName('Multi-channel chords Test')
+trk0.smfSeqName('Multi-channel chords Test 1')
   .smfCopyright('https://jazz-soft.net')
   .smfText('A format 1 file with notes in three channels each in separate tracks.\n')
   .smfText(' Now you must hear a chord at C5!')
