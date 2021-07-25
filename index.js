@@ -9,7 +9,7 @@ if (module.parent) {
     try {
       smf = new JZZ.MIDI.SYX(smf);
     }
-    catch(err) {}
+    catch(err) {/**/}
     try {
       smf = new JZZ.MIDI.SMF(smf);
     }
@@ -33,7 +33,7 @@ if (module.parent) {
         new JZZ.MIDI.SYX(data);
         ext = '.syx';
       }
-      catch(err) {}
+      catch(err) {/**/}
       try {
         new JZZ.MIDI.SMF(data);
       }
@@ -69,7 +69,7 @@ else {
     try {
       smf = new JZZ.MIDI.SYX(data);
     }
-    catch(err) {}
+    catch(err) {/**/}
     try {
       if (!smf) smf = new JZZ.MIDI.SMF(data);
     }
