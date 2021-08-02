@@ -1,6 +1,7 @@
 var fs = require('fs');
 var path = require('path');
 var JZZ = require('jzz');
+require('jzz-midi-gm')(JZZ);
 require('jzz-midi-smf')(JZZ);
 
 if (module.parent) {
@@ -107,6 +108,7 @@ function log(msg) {
 
 function play(smf, out) {
   if (out == 'null') return;
+  smf.annotate();
   var player = smf.player();
   if (smf.validate) {
     var warn = smf.validate();
