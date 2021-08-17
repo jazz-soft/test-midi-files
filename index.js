@@ -10,13 +10,14 @@ if (module.parent) {
     try {
       smf = new JZZ.MIDI.SYX(smf);
     }
-    catch(err) {/**/}
-    try {
-      smf = new JZZ.MIDI.SMF(smf);
-    }
     catch(err) {
-      console.error('Error:', err.message);
-      return;
+      try {
+        smf = new JZZ.MIDI.SMF(smf);
+      }
+      catch(err) {
+        console.error('Error:', err.message);
+        return;
+      }        
     }
     play(smf, process.argv[2]);
   }
@@ -34,13 +35,14 @@ if (module.parent) {
         new JZZ.MIDI.SYX(data);
         ext = '.syx';
       }
-      catch(err) {/**/}
-      try {
-        new JZZ.MIDI.SMF(data);
-      }
       catch(err) {
-        console.error('Error:', err.message);
-        return;
+        try {
+          new JZZ.MIDI.SMF(data);
+        }
+        catch(err) {
+          console.error('Error:', err.message);
+          return;
+        }          
       }
     }
     if (typeof name == 'undefined') {
@@ -70,13 +72,14 @@ else {
     try {
       smf = new JZZ.MIDI.SYX(data);
     }
-    catch(err) {/**/}
-    try {
-      if (!smf) smf = new JZZ.MIDI.SMF(data);
-    }
     catch(err) {
-      console.error('Error:', err.message);
-      process.exit(-1);
+      try {
+        smf = new JZZ.MIDI.SMF(data);
+      }
+      catch(err) {
+        console.error('Error:', err.message);
+        process.exit(-1);
+      }        
     }
     play(smf, process.argv[3]);
   }
@@ -146,12 +149,19 @@ function play(smf, out) {
 }
 
 function printSMF(smf) {
-  if (smf instanceof JZZ.MIDI.SYX) return smf.toString();
+  if (smf instanceof JZZ.MIDI.SYX) return printSYX(smf);
   var i;
   var a = [[smf._off, ' SMF:'], [smf._off_type, '   type: ' + smf.type], [smf._off_ntrk, '   tracks: ' + smf.ntrk]];
   if (smf.ppqn) a.push([smf._off_ppqn, '   ppqn: ' + smf.ppqn]);
   else a = a.concat([[smf._off_fps, '   fps: ' + smf.fps], [smf._off_ppf, '   ppf: ' + smf.ppf]]);
   for (i = 0; i < smf.length; i++) a = a.concat(printChunk(smf[i]));
+  return format(a);
+}
+
+function printSYX(syx) {
+  var i;
+  var a = [[0, ' SYX:']];
+  for (i = 0; i < syx.length; i++) a.push([syx[i]._off, '   ' + syx[i].toString()]);
   return format(a);
 }
 
