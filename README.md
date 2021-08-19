@@ -44,6 +44,7 @@ If you believe your test will be useful for others, please don't hesitate to che
 - [**test-control-7d-omni-mode-on.mid**](https://github.com/jazz-soft/test-midi-files/raw/main/midi/test-control-7d-omni-mode-on.mid)
 - [**test-control-7e-mono-mode-on.mid**](https://github.com/jazz-soft/test-midi-files/raw/main/midi/test-control-7e-mono-mode-on.mid)
 - [**test-control-7f-poly-mode-on.mid**](https://github.com/jazz-soft/test-midi-files/raw/main/midi/test-control-7f-poly-mode-on.mid)
+- [**test-gs-doggy.mid**](https://github.com/jazz-soft/test-midi-files/raw/main/midi/test-gs-doggy.mid)
 - [**test-multichannel-chords-0.mid**](https://github.com/jazz-soft/test-midi-files/raw/main/midi/test-multichannel-chords-0.mid)
 - [**test-multichannel-chords-1.mid**](https://github.com/jazz-soft/test-midi-files/raw/main/midi/test-multichannel-chords-1.mid)
 - [**test-multichannel-chords-2.mid**](https://github.com/jazz-soft/test-midi-files/raw/main/midi/test-multichannel-chords-2.mid)
