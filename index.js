@@ -113,10 +113,7 @@ function play(smf, out) {
   if (out == 'null') return;
   smf.annotate();
   var player = smf.player();
-  if (smf.validate) {
-    var warn = smf.validate();
-    if (warn) for (var i = 0; i < warn.length; i++) console.log('WARNING: ' + warn[i]);
-  }
+  printWarn(smf.validate());
   if (out == 'print') {
     console.log(smf.toString());
     return;
@@ -182,4 +179,24 @@ function format(a) {
     a[i] = '[' + a[i][0].toString().padStart(m) + ']' + a[i][1];
   }
   return a.join('\n');
+}
+
+function printWarn(warn) {
+  if (!warn) return;
+  var i;
+  var bymsg = {};
+  for (i = 0; i < warn.length; i++) {
+    if (!bymsg[warn[i].msg]) bymsg[warn[i].msg] = [0, 0];
+    bymsg[warn[i].msg][0]++;
+  }
+  for (var i = 0; i < warn.length; i++) {
+    if (bymsg[warn[i].msg][1] < 10) {
+      console.log('WARNING: ' + warn[i]);
+      if (bymsg[warn[i].msg][0] > 15) bymsg[warn[i].msg][1]++;
+    }
+    if (bymsg[warn[i].msg][1] == 10) {
+      console.log('         and ' + (bymsg[warn[i].msg][0] - 10) + ' more of "' + warn[i].msg + '" ...');
+      bymsg[warn[i].msg][1]++;
+    }
+  }
 }
