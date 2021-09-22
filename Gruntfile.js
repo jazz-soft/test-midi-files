@@ -17,13 +17,15 @@ module.exports = function(grunt) {
     }
     function group(s) {
       if (s == 'test-c-major-scale.mid') return 0;
-      if (s.includes('karaoke')) return 2;
-      if (s.includes('non-midi')) return 3;
-      if (s.includes('vlq')) return 4;
-      if (s.includes('illegal')) return 5;
-      if (s.includes('corrupt')) return 5;
-      if (s.includes('syx')) return 5;
-      return 1;
+      if (s.includes('-all-')) return 1;
+      if (s.includes('doggy')) return 1;
+      if (s.includes('karaoke')) return 3;
+      if (s.includes('non-midi')) return 4;
+      if (s.includes('vlq')) return 5;
+      if (s.includes('illegal')) return 6;
+      if (s.includes('corrupt')) return 6;
+      if (s.includes('syx')) return 6;
+      return 2;
     }
     midis.sort(function(a, b) {
       var aa = group(a);

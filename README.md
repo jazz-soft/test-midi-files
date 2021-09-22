@@ -2,8 +2,8 @@
 A framework for producing test MIDI files
 
 See also:
-- [**midi-test**](https://github.com/jazz-soft/midi-test),
-- [**web-midi-test**](https://github.com/jazz-soft/web-midi-test),
+- [**midi-test**](https://github.com/jazz-soft/midi-test)
+- [**web-midi-test**](https://github.com/jazz-soft/web-midi-test)
 - [**official MIDI specifications**](https://www.midi.org/specifications)
 
 ## Before use
@@ -36,6 +36,9 @@ If you believe your test will be useful for others, please don't hesitate to che
 - [**test-c-major-scale.mid**](https://github.com/jazz-soft/test-midi-files/raw/main/midi/test-c-major-scale.mid)
 - [**test-all-gm-percussion.mid**](https://github.com/jazz-soft/test-midi-files/raw/main/midi/test-all-gm-percussion.mid)
 - [**test-all-gm-sounds.mid**](https://github.com/jazz-soft/test-midi-files/raw/main/midi/test-all-gm-sounds.mid)
+- [**test-gm2-doggy-78-00-38-4c.mid**](https://github.com/jazz-soft/test-midi-files/raw/main/midi/test-gm2-doggy-78-00-38-4c.mid)
+- [**test-gm2-doggy-79-01-7b.mid**](https://github.com/jazz-soft/test-midi-files/raw/main/midi/test-gm2-doggy-79-01-7b.mid)
+- [**test-gs-doggy-01-00-7b.mid**](https://github.com/jazz-soft/test-midi-files/raw/main/midi/test-gs-doggy-01-00-7b.mid)
 - [**test-control-00-20-bank-select.mid**](https://github.com/jazz-soft/test-midi-files/raw/main/midi/test-control-00-20-bank-select.mid)
 - [**test-control-40-damper.mid**](https://github.com/jazz-soft/test-midi-files/raw/main/midi/test-control-40-damper.mid)
 - [**test-control-41-portamento.mid**](https://github.com/jazz-soft/test-midi-files/raw/main/midi/test-control-41-portamento.mid)
@@ -44,7 +47,6 @@ If you believe your test will be useful for others, please don't hesitate to che
 - [**test-control-7d-omni-mode-on.mid**](https://github.com/jazz-soft/test-midi-files/raw/main/midi/test-control-7d-omni-mode-on.mid)
 - [**test-control-7e-mono-mode-on.mid**](https://github.com/jazz-soft/test-midi-files/raw/main/midi/test-control-7e-mono-mode-on.mid)
 - [**test-control-7f-poly-mode-on.mid**](https://github.com/jazz-soft/test-midi-files/raw/main/midi/test-control-7f-poly-mode-on.mid)
-- [**test-gs-doggy.mid**](https://github.com/jazz-soft/test-midi-files/raw/main/midi/test-gs-doggy.mid)
 - [**test-multichannel-chords-0.mid**](https://github.com/jazz-soft/test-midi-files/raw/main/midi/test-multichannel-chords-0.mid)
 - [**test-multichannel-chords-1.mid**](https://github.com/jazz-soft/test-midi-files/raw/main/midi/test-multichannel-chords-1.mid)
 - [**test-multichannel-chords-2.mid**](https://github.com/jazz-soft/test-midi-files/raw/main/midi/test-multichannel-chords-2.mid)
