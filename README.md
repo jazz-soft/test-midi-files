@@ -40,7 +40,7 @@ If you believe your test will be useful for others, please don't hesitate to che
 - [**test-gm2-doggy-79-01-7b.mid**](https://github.com/jazz-soft/test-midi-files/raw/main/midi/test-gm2-doggy-79-01-7b.mid)
 - [**test-gs-doggy-01-00-7b.mid**](https://github.com/jazz-soft/test-midi-files/raw/main/midi/test-gs-doggy-01-00-7b.mid)
 - [**test-xg-doggy-40-00-30.mid**](https://github.com/jazz-soft/test-midi-files/raw/main/midi/test-xg-doggy-40-00-30.mid)
-- [**test-xg-doggy-7e-00-00-53.mid**](https://github.com/jazz-soft/test-midi-files/raw/main/midi/test-xg-doggy-7e-00-00-53.mid)
+- [**test-xg-doggy-7e-00-00-54.mid**](https://github.com/jazz-soft/test-midi-files/raw/main/midi/test-xg-doggy-7e-00-00-54.mid)
 - [**test-control-00-20-bank-select.mid**](https://github.com/jazz-soft/test-midi-files/raw/main/midi/test-control-00-20-bank-select.mid)
 - [**test-control-40-damper.mid**](https://github.com/jazz-soft/test-midi-files/raw/main/midi/test-control-40-damper.mid)
 - [**test-control-41-portamento.mid**](https://github.com/jazz-soft/test-midi-files/raw/main/midi/test-control-41-portamento.mid)
