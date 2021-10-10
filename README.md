@@ -36,6 +36,7 @@ If you believe your test will be useful for others, please don't hesitate to che
 - [**test-c-major-scale.mid**](https://github.com/jazz-soft/test-midi-files/raw/main/midi/test-c-major-scale.mid)
 - [**test-all-gm-percussion.mid**](https://github.com/jazz-soft/test-midi-files/raw/main/midi/test-all-gm-percussion.mid)
 - [**test-all-gm-sounds.mid**](https://github.com/jazz-soft/test-midi-files/raw/main/midi/test-all-gm-sounds.mid)
+- [**test-all-gs-sounds.mid**](https://github.com/jazz-soft/test-midi-files/raw/main/midi/test-all-gs-sounds.mid)
 - [**test-all-microsoft-gs-wavetable-synth-sounds.mid**](https://github.com/jazz-soft/test-midi-files/raw/main/midi/test-all-microsoft-gs-wavetable-synth-sounds.mid)
 - [**test-gm2-doggy-78-00-38-4c.mid**](https://github.com/jazz-soft/test-midi-files/raw/main/midi/test-gm2-doggy-78-00-38-4c.mid)
 - [**test-gm2-doggy-79-01-7b.mid**](https://github.com/jazz-soft/test-midi-files/raw/main/midi/test-gm2-doggy-79-01-7b.mid)

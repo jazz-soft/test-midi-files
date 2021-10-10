@@ -189,7 +189,7 @@ function printWarn(warn) {
     if (!bymsg[warn[i].msg]) bymsg[warn[i].msg] = [0, 0];
     bymsg[warn[i].msg][0]++;
   }
-  for (var i = 0; i < warn.length; i++) {
+  for (i = 0; i < warn.length; i++) {
     if (bymsg[warn[i].msg][1] < 10) {
       console.log('WARNING: ' + warn[i]);
       if (bymsg[warn[i].msg][0] > 15) bymsg[warn[i].msg][1]++;
