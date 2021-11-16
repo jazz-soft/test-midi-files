@@ -17,12 +17,12 @@
     "jzz": "^1.4.5",
     "jzz-gui-player": "^1.5.2",
     "jzz-midi-gear": "^1.2.2",
-    "jzz-midi-gm": "^1.2.7",
+    "jzz-midi-gm": "^1.2.8",
     "jzz-midi-smf": "^1.6.4",
     "jzz-synth-tiny": "^1.2.8"
   },
   "devDependencies": {
-    "eslint": "^8.1.0",
+    "eslint": "^8.2.0",
     "grunt": "^1.4.1"
   },
   "repository": {
