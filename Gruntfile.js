@@ -16,7 +16,7 @@ module.exports = function(grunt) {
       if (a.length == 2) midis.push(a[1]);
     }
     function group(s) {
-      if (s == 'test-c-major-scale.mid') return 0;
+      if (s == 'test-c-major-scale.mid' || s == 'test-empty.mid') return 0;
       if (s.includes('-all-')) return 1;
       if (s.includes('doggy')) return 1;
       if (s.includes('karaoke')) return 3;
