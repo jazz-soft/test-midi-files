@@ -122,6 +122,10 @@ function play(smf, out) {
     console.log(printSMF(smf));
     return;
   }
+  if (out == 'base64') {
+    console.log(JZZ.lib.toBase64(smf.dump()));
+    return;
+  }
   JZZ().or(function() {
     console.error('Cannot start MIDI engine!');
     if (!out) {

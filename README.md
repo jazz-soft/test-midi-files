@@ -10,7 +10,7 @@ See also:
 Please run `npm install` to make sure all dependencies are up to date.
 
 ## Playing/viewing MIDI files
-`node index.js <filename.mid> [<midi-out port> | print | inspect]`
+`node index.js <filename.mid> [<midi-out port> | print | inspect | base64]`
 
 e.g.:  
 `node index.js midi/test-c-major-scale.mid`  
@@ -21,6 +21,8 @@ e.g.:
 -- print MIDI file contents.  
 `node index.js midi/test-c-major-scale.mid inspect`  
 -- same as `print`, but also outputs the data offset within the MIDI file.
+`node index.js midi/test-c-major-scale.mid base64`  
+-- output the MIDI file binary data in `Base64` format.
 
 ## Playing MIDI files in browser
 Open `index.html`
