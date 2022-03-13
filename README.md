@@ -20,7 +20,7 @@ e.g.:
 `node index.js midi/test-c-major-scale.mid print`  
 -- print MIDI file contents.  
 `node index.js midi/test-c-major-scale.mid inspect`  
--- same as `print`, but also outputs the data offset within the MIDI file.
+-- same as `print`, but also outputs the data offset within the MIDI file.  
 `node index.js midi/test-c-major-scale.mid base64`  
 -- output the MIDI file binary data in `Base64` format.
 
