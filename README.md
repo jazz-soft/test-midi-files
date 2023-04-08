@@ -37,6 +37,9 @@ If you believe your test will be useful for others, please don't hesitate to che
 ## Test files
 - [**test-c-major-scale.mid**](https://github.com/jazz-soft/test-midi-files/raw/main/midi/test-c-major-scale.mid)
 - [**test-empty.mid**](https://github.com/jazz-soft/test-midi-files/raw/main/midi/test-empty.mid)
+- [**test-silence-all-notes-off.mid**](https://github.com/jazz-soft/test-midi-files/raw/main/midi/test-silence-all-notes-off.mid)
+- [**test-silence-end-of-track.mid**](https://github.com/jazz-soft/test-midi-files/raw/main/midi/test-silence-end-of-track.mid)
+- [**test-silence-text-metaevent.mid**](https://github.com/jazz-soft/test-midi-files/raw/main/midi/test-silence-text-metaevent.mid)
 - [**test-all-gm-percussion.mid**](https://github.com/jazz-soft/test-midi-files/raw/main/midi/test-all-gm-percussion.mid)
 - [**test-all-gm-sounds.mid**](https://github.com/jazz-soft/test-midi-files/raw/main/midi/test-all-gm-sounds.mid)
 - [**test-all-gm2-sounds.mid**](https://github.com/jazz-soft/test-midi-files/raw/main/midi/test-all-gm2-sounds.mid)
