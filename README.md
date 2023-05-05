@@ -66,6 +66,7 @@ If you believe your test will be useful for others, please don't hesitate to che
 - [**test-multichannel-chords-1.mid**](https://github.com/jazz-soft/test-midi-files/raw/main/midi/test-multichannel-chords-1.mid)
 - [**test-multichannel-chords-2.mid**](https://github.com/jazz-soft/test-midi-files/raw/main/midi/test-multichannel-chords-2.mid)
 - [**test-multichannel-chords-3.mid**](https://github.com/jazz-soft/test-midi-files/raw/main/midi/test-multichannel-chords-3.mid)
+- [**test-note-on-velocity.mid**](https://github.com/jazz-soft/test-midi-files/raw/main/midi/test-note-on-velocity.mid)
 - [**test-rpn-00-00-pitch-bend-range.mid**](https://github.com/jazz-soft/test-midi-files/raw/main/midi/test-rpn-00-00-pitch-bend-range.mid)
 - [**test-rpn-00-01-fine-tuning.mid**](https://github.com/jazz-soft/test-midi-files/raw/main/midi/test-rpn-00-01-fine-tuning.mid)
 - [**test-rpn-00-02-coarse-tuning.mid**](https://github.com/jazz-soft/test-midi-files/raw/main/midi/test-rpn-00-02-coarse-tuning.mid)
