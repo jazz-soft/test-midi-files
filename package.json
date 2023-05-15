@@ -14,15 +14,15 @@
   ],
   "author": "jazz-soft (https://jazz-soft.net)",
   "dependencies": {
-    "jzz": "^1.6.1",
+    "jzz": "^1.6.3",
     "jzz-gui-player": "^1.6.3",
-    "jzz-midi-gear": "^1.2.9",
+    "jzz-midi-gear": "^1.3.0",
     "jzz-midi-gm": "^1.3.3",
-    "jzz-midi-smf": "^1.7.3",
+    "jzz-midi-smf": "^1.7.5",
     "jzz-synth-tiny": "^1.3.5"
   },
   "devDependencies": {
-    "eslint": "^8.39.0",
+    "eslint": "^8.40.0",
     "grunt": "^1.6.1"
   },
   "repository": {

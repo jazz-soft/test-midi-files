@@ -106,3 +106,6 @@ If you believe your test will be useful for others, please don't hesitate to che
 - [**test-syx-7e-06-01-id-request.syx**](https://github.com/jazz-soft/test-midi-files/raw/main/midi/test-syx-7e-06-01-id-request.syx)
 ## More to come...
 *NOTE:* not every MIDI message is understood by every MIDI device!
+
+## Thanks for your support!
+[![Stargazers for @jazz-soft/test-midi-files](https://reporoster.com/stars/jazz-soft/test-midi-files)](https://github.com/jazz-soft/test-midi-files/stargazers)
