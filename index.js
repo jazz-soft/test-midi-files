@@ -6,7 +6,7 @@ require('jzz-midi-smf')(JZZ);
 
 if (module.parent) {
   module.exports.play = function(smf) {
-    if (smf instanceof JZZ.MIDI.SMF || smf instanceof JZZ.MIDI.SYX) smf = smf.dump();
+    if (smf instanceof JZZ.MIDI.SMF || smf instanceof JZZ.MIDI.SYX || smf instanceof RawClip) smf = smf.dump();
     try {
       smf = new JZZ.MIDI.SYX(smf);
     }
@@ -30,6 +30,10 @@ if (module.parent) {
       data = data.dump();
       ext = '.syx';
     }
+    else if (data instanceof RawClip) {
+      data = data.dump();
+      ext = '.midi2';
+    }
     else {
       try {
         new JZZ.MIDI.SYX(data);
@@ -48,11 +52,12 @@ if (module.parent) {
     if (typeof name == 'undefined') {
       name = path.basename(process.argv[1]);
       if (name.toLowerCase().endsWith('.js')) name = name.substr(0, name.length - 3);
-      name = path.join(__dirname, 'midi', name + ext);
+      name = path.join(__dirname, ext == '.midi2' ? 'midi2' : 'midi', name + ext);
     }
     console.log('Writing ' + name + ' ...');
     fs.writeFileSync(name, data, 'binary');
   }
+  module.exports.RawClip = RawClip;
 }
 else {
   var data;
@@ -204,3 +209,13 @@ function printWarn(warn) {
     }
   }
 }
+
+function RawClip() {}
+RawClip.prototype = [];
+RawClip.prototype.send = function(msg) { this.push(JZZ.UMP(msg)); return this; };
+RawClip.prototype.dump = function() {
+  var a = ['SMF2CLIP'];
+  for (var i = 0; i < this.length; i++) a.push(this[i].dump());
+  return a.join('');
+}
+JZZ.lib.copyMidi2Helpers(RawClip);
