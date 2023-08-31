@@ -104,6 +104,8 @@ If you believe your test will be useful for others, please don't hesitate to che
 - [**test-illegal-message-fd.mid**](https://github.com/jazz-soft/test-midi-files/raw/main/midi/test-illegal-message-fd.mid)
 - [**test-illegal-message-fe.mid**](https://github.com/jazz-soft/test-midi-files/raw/main/midi/test-illegal-message-fe.mid)
 - [**test-syx-7e-06-01-id-request.syx**](https://github.com/jazz-soft/test-midi-files/raw/main/midi/test-syx-7e-06-01-id-request.syx)
+- [**test-empty.midi2**](https://github.com/jazz-soft/test-midi-files/raw/main/midi2/test-empty.midi2)
+- [**test-no-header.midi2**](https://github.com/jazz-soft/test-midi-files/raw/main/midi2/test-no-header.midi2)
 ## More to come...
 *NOTE:* not every MIDI message is understood by every MIDI device!
 
