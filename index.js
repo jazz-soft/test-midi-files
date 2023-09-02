@@ -31,14 +31,23 @@ RawClip.prototype.load = function(s) {
     }
     else _error('Not a Clip');
   }
+  this._off = off;
   off += 8;
   var a, i, m, t, len;
+  var tt = 0;
   while (off < s.length) {
     t = s.charCodeAt(off) >> 4;
     len = [4, 4, 4, 8, 8, 16, 4, 4, 8, 8, 8, 12, 12, 16, 16, 16][t];
     a = [];
     for (i = 0; i < len; i++) a.push(s.charCodeAt(off + i));
     m = JZZ.UMP(a);
+    if (m.isDelta()) tt += m.getDelta();
+    else if (m.isStartClip()) {
+      tt = 0;
+      if (this.length && this[this.length - 1].isDelta()) this[this.length - 1].tt = 0;
+    }
+    m.tt = tt;
+    m._off = off;
     this.push(m);
     off += len;
   }
@@ -48,6 +57,12 @@ RawClip.prototype.toString = function() {
   var a = [SMF2CLIP];
   for (i = 0; i < this.length; i++) a.push('  ' + this[i].tt + ': ' + this[i]);
   return a.join('\n');
+};
+RawClip.prototype.player = function() {
+  return {
+    connect: function() {},
+    play: function() { console.log('MIDI 2.0 Clip Player is not yet available. Please be patient...'); }
+  };
 };
 JZZ.lib.copyMidi2Helpers(RawClip);
 
@@ -222,8 +237,10 @@ function printSMF(smf) {
   return format(a);
 }
 
-function printClip(syx) {
-  return 'coming soon...';
+function printClip(clip) {
+  var a = [[clip._off, ' ' + SMF2CLIP]];
+  for (var i = 0; i < clip.length; i++) a.push([clip[i]._off, '   ' + clip[i].tt + ': ' + clip[i].toString()]);
+  return format(a);
 }
 
 function printSYX(syx) {
