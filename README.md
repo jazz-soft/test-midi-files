@@ -32,7 +32,11 @@ Copy `code/test-c-major-scale.js` or your favorite test in the `code` directory.
 Make changes using the API documented at https://jazz-soft.net/doc/JZZ/midifile.html to suit your test case.  
 Run `node code/your-test-name.js`, it will create a MIDI file with the same name in the `midi` directory.
 
-If you believe your test will be useful for others, please don't hesitate to check it into this repository.
+If you believe your test will be useful for others, please check it into this repository!
+
+## MIDI 2.0 files
+Experimental support.
+See the `code2` and `midi2` directories.
 
 ## Test files
 - [**test-c-major-scale.mid**](https://github.com/jazz-soft/test-midi-files/raw/main/midi/test-c-major-scale.mid)
