@@ -31,6 +31,5 @@
   },
   "homepage": "https://github.com/jazz-soft/test-midi-files",
   "bugs": "https://github.com/jazz-soft/test-midi-files/issues",
-  "license": "MIT",
-  "private": true
+  "license": "MIT"
 }

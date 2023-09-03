@@ -38,6 +38,13 @@ If you believe your test will be useful for others, please check it into this re
 Experimental support.
 See the `code2` and `midi2` directories.
 
+## Using as library in your own project
+`npm install test-midi-files --save`  
+```js
+const TEST = require('test-midi-files');
+//...
+```
+
 ## Test files
 - [**test-c-major-scale.mid**](https://github.com/jazz-soft/test-midi-files/raw/main/midi/test-c-major-scale.mid)
 - [**test-empty.mid**](https://github.com/jazz-soft/test-midi-files/raw/main/midi/test-empty.mid)
