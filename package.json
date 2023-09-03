@@ -12,7 +12,9 @@
     "testing",
     "midi",
     "midi2",
-    "midi-file"
+    "midi-file",
+    "smf",
+    "syx"
   ],
   "author": "jazz-soft (https://jazz-soft.net)",
   "dependencies": {
