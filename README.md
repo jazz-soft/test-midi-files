@@ -1,6 +1,9 @@
 # test-midi-files
 A framework for producing test MIDI files
 
+[![npm](https://img.shields.io/npm/v/test-midi-files.svg)](https://www.npmjs.com/package/test-midi-files)
+[![npm](https://img.shields.io/npm/dt/test-midi-files.svg)](https://www.npmjs.com/package/test-midi-files)
+
 See also:
 - [**midi-test**](https://github.com/jazz-soft/midi-test)
 - [**web-midi-test**](https://github.com/jazz-soft/web-midi-test)

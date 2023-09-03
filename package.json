@@ -1,6 +1,6 @@
 {
   "name": "test-midi-files",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "A framework for producing test MIDI files",
   "main": "index.js",
   "scripts": {
@@ -10,7 +10,9 @@
   "keywords": [
     "test",
     "testing",
-    "midi"
+    "midi",
+    "midi2",
+    "midi-file"
   ],
   "author": "jazz-soft (https://jazz-soft.net)",
   "dependencies": {
