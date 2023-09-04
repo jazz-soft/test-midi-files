@@ -6,7 +6,11 @@ require('jzz-midi-smf')(JZZ);
 
 function _error(s) { throw new Error(s); }
 var SMF2CLIP = 'SMF2CLIP';
-function RawClip(x) { if (typeof x != 'undefined') this.load(x); }
+function RawClip(x) {
+  var self = this instanceof RawClip ? this : new RawClip();
+  if (typeof x != 'undefined') self.load(x);
+  return self;
+}
 RawClip.prototype = [];
 RawClip.prototype.send = function(msg) { this.push(JZZ.UMP(msg)); return this; };
 RawClip.prototype.annotate = function() {};
