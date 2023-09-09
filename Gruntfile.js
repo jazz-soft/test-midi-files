@@ -29,6 +29,7 @@ module.exports = function(grunt) {
       if (s.includes('vlq')) return 5;
       if (s.includes('illegal')) return 6;
       if (s.includes('corrupt')) return 6;
+      if (s.includes('not-a')) return 6;
       if (s.includes('syx')) return 6;
       return 2;
     }

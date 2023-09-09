@@ -117,10 +117,12 @@ const TEST = require('test-midi-files');
 - [**test-illegal-message-fc.mid**](https://github.com/jazz-soft/test-midi-files/raw/main/midi/test-illegal-message-fc.mid)
 - [**test-illegal-message-fd.mid**](https://github.com/jazz-soft/test-midi-files/raw/main/midi/test-illegal-message-fd.mid)
 - [**test-illegal-message-fe.mid**](https://github.com/jazz-soft/test-midi-files/raw/main/midi/test-illegal-message-fe.mid)
+- [**test-not-a-midi-file.mid**](https://github.com/jazz-soft/test-midi-files/raw/main/midi/test-not-a-midi-file.mid)
 - [**test-syx-7e-06-01-id-request.syx**](https://github.com/jazz-soft/test-midi-files/raw/main/midi/test-syx-7e-06-01-id-request.syx)
 - [**test-empty.midi2**](https://github.com/jazz-soft/test-midi-files/raw/main/midi2/test-empty.midi2)
 - [**test-minimal.midi2**](https://github.com/jazz-soft/test-midi-files/raw/main/midi2/test-minimal.midi2)
 - [**test-no-header.midi2**](https://github.com/jazz-soft/test-midi-files/raw/main/midi2/test-no-header.midi2)
+- [**test-not-a-midi-file.midi2**](https://github.com/jazz-soft/test-midi-files/raw/main/midi2/test-not-a-midi-file.midi2)
 ## More to come...
 *NOTE:* not every MIDI message is understood by every MIDI device!
 
