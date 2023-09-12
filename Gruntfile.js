@@ -29,8 +29,8 @@ module.exports = function(grunt) {
       if (s.includes('vlq')) return 5;
       if (s.includes('illegal')) return 6;
       if (s.includes('corrupt')) return 6;
-      if (s.includes('not-a')) return 6;
-      if (s.includes('syx')) return 6;
+      if (s.includes('-file')) return 7;
+      if (s.includes('syx')) return 7;
       return 2;
     }
     midis.sort(function(a, b) {
@@ -45,6 +45,7 @@ module.exports = function(grunt) {
       if (a.length == 2) midis2.push(a[1]);
     }
     function group2(s) {
+      if (s.includes('-file')) return 1;
       return 0;
     }
     midis2.sort(function(a, b) {
