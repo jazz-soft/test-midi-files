@@ -63,16 +63,13 @@ RawClip.prototype.toString = function() {
   return a.join('\n');
 };
 RawClip.prototype.player = function() {
-  return {
-    connect: function() {},
-    play: function() { console.log('MIDI 2.0 Clip Player is not yet available. Please be patient...'); }
-  };
+  return JZZ.MIDI.Clip(this.dump()).player();
 };
 JZZ.lib.copyMidi2Helpers(RawClip);
 
 if (module.parent) {
   module.exports.play = function(smf) {
-    if (smf instanceof JZZ.MIDI.SMF || smf instanceof JZZ.MIDI.SYX || smf instanceof RawClip) smf = smf.dump();
+    if (smf instanceof JZZ.MIDI.SMF || smf instanceof JZZ.MIDI.SYX || smf instanceof JZZ.MIDI.Clip || smf instanceof RawClip) smf = smf.dump();
     try {
       smf = new RawClip(smf);
     }
@@ -222,7 +219,9 @@ function play(smf, out) {
       }
     }).and(function() {
       console.log('MIDI-Out port:', this.name());
-      player.connect(this);
+      var m2m1 = new JZZ.M2M1();
+      m2m1.connect(this);
+      player.connect(m2m1);
       player.connect(log);
       player.onEnd = function() { console.log('\ndone!'); };
       player.play();
