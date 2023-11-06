@@ -3,6 +3,8 @@ A framework for producing test MIDI files
 
 [![npm](https://img.shields.io/npm/v/test-midi-files.svg)](https://www.npmjs.com/package/test-midi-files)
 [![npm](https://img.shields.io/npm/dt/test-midi-files.svg)](https://www.npmjs.com/package/test-midi-files)
+[![build](https://github.com/jazz-soft/test-midi-files/actions/workflows/build.yml/badge.svg)](https://github.com/jazz-soft/test-midi-files/actions)
+[![Coverage Status](https://coveralls.io/repos/github/jazz-soft/test-midi-files/badge.svg?branch=main)](https://coveralls.io/github/jazz-soft/test-midi-files?branch=main)
 
 See also:
 - [**midi-test**](https://github.com/jazz-soft/midi-test)
