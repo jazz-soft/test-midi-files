@@ -2,6 +2,7 @@
 code*
 midi*
 test*
+coverage
 Gruntfile.js
 *.html
-
+!test
