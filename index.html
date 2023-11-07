@@ -45,13 +45,20 @@ JZZ({ sysex: true, degrade: true }).and(function() {
   for (var i in inputs) this.openMidiIn(i).connect(gotmsg);
 });
 
+function read(msg) {
+  if (msg.ff == 1 || msg.ff == 2 || msg.ff == 3) return [msg.ff, escape(msg.dd)];
+};
+
 var player = JZZ.gui.Player({ at: 'player', file: true, loop: false, sndoff: false });
 player.onLoad = showInfo;
 player.onPlay = clearLog;
 player.connect(function(msg) {
-  if (msg.ff == 1) printLog(msg.dd);
-  if (msg.ff == 2) printLog('<span class=author>(' + escape(msg.dd) + ')</span>\n');
-  if (msg.ff == 3) printLog('<span class=title>' + escape(msg.dd) + '</span>');
+  var x = read(msg);
+  if (x) {
+    if (x[0] == 1) printLog(x[1]);
+    if (x[0] == 2) printLog('<span class=author>(' + x[1] + ')</span>\n');
+    if (x[0] == 3) printLog('<span class=title>' + x[1] + '</span>');
+  }
   console.log(msg.toString());
 });
 
@@ -67,20 +74,22 @@ function printLog(s) {
 }
 function showInfo(smf) {
   text = [];
-  var i, ff1, ff2, ff3;
+  var i, x, ff1, ff2, ff3;
   var track = smf[0];
   for (i = 0; i < track.length; i++) {
-    if (track[i].ff == 1 && !ff1) {
+    x = read(track[i]);
+    if (!x) continue;
+    if (x[0] == 1 && !ff1) {
       ff1 = true;
-      text.push(escape(track[i].dd));
+      text.push(x[1]);
     }
-    if (track[i].ff == 2 && !ff2) {
+    if (x[0] == 2 && !ff2) {
       ff2 = true;
-      text.push('<span class=author>(' + escape(track[i].dd) + ')</span>\n');
+      text.push('<span class=author>(' + x[1] + ')</span>\n');
     }
-    if (track[i].ff == 3 && !ff3) {
+    if (x[0] == 3 && !ff3) {
       ff3 = true;
-      text.push('<span class=title>' + escape(track[i].dd) + '</span>');
+      text.push('<span class=title>' + x[1] + '</span>');
     }
   }
   log.innerHTML = text.join('\n');
