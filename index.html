@@ -45,8 +45,36 @@ JZZ({ sysex: true, degrade: true }).and(function() {
   for (var i in inputs) this.openMidiIn(i).connect(gotmsg);
 });
 
+var T = {};
 function read(msg) {
   if (msg.ff == 1 || msg.ff == 2 || msg.ff == 3) return [msg.ff, escape(msg.dd)];
+  if (!msg.isMidi2) return;
+  if ((msg[0] >> 4) != 13) return;
+  if (msg[2] != 1 && msg[2] != 2) return;
+  var f = msg[1] >> 6;
+  var k = String.fromCharCode(msg[0]) + String.fromCharCode(msg[1] & 0x3f) + String.fromCharCode(msg[2]) + String.fromCharCode(msg[3]);
+  var n = 1;
+  if (msg[2] == 1) {
+    if (msg[3] == 3) n = 3;
+    else if (msg[3] == 4) n = 2;
+  }
+  var a = '';
+  for (var i = 4; i < 16; i++) if (msg[i]) a += String.fromCharCode(msg[i]); else break;
+  if (f == 0) {
+    T[k] = '';
+    return [n, a];
+  }
+  else if (f == 1) {
+    T[k] = a;
+  }
+  else if (f == 2) {
+    T[k] += a;
+  }
+  else if (f == 3) {
+    a = T[k] + a;
+    T[k] = '';
+    return [n, a];
+  }
 };
 
 var player = JZZ.gui.Player({ at: 'player', file: true, loop: false, sndoff: false });
@@ -55,9 +83,9 @@ player.onPlay = clearLog;
 player.connect(function(msg) {
   var x = read(msg);
   if (x) {
-    if (x[0] == 1) printLog(x[1]);
     if (x[0] == 2) printLog('<span class=author>(' + x[1] + ')</span>\n');
-    if (x[0] == 3) printLog('<span class=title>' + x[1] + '</span>');
+    else if (x[0] == 3) printLog('<span class=title>' + x[1] + '</span>');
+    else printLog(x[1]);
   }
   console.log(msg.toString());
 });
