@@ -103,9 +103,11 @@ function printLog(s) {
 function showInfo(smf) {
   text = [];
   var i, x, ff1, ff2, ff3;
-  var track = smf[0];
-  for (i = 0; i < track.length; i++) {
-    x = read(track[i]);
+  var list;
+  if (smf instanceof JZZ.MIDI.Clip) list = smf.header.slice().concat(smf.slice());
+  else list = smf[0];
+  for (i = 0; i < list.length; i++) {
+    x = read(list[i]);
     if (!x) continue;
     if (x[0] == 1 && !ff1) {
       ff1 = true;

@@ -1,6 +1,6 @@
 {
   "name": "test-midi-files",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "A framework for producing test MIDI files",
   "main": "index.js",
   "scripts": {

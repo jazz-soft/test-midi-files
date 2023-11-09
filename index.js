@@ -98,22 +98,32 @@ if (module.parent) {
       data = data.dump();
       ext = '.syx';
     }
+    else if (data instanceof JZZ.MIDI.Clip) {
+      data = data.dump();
+      ext = '.midi2';
+    }
     else if (data instanceof RawClip) {
       data = data.dump();
       ext = '.midi2';
     }
     else {
       try {
-        new JZZ.MIDI.SYX(data);
-        ext = '.syx';
+        new JZZ.MIDI.Clip(data);
+        ext = '.midi2';
       }
       catch(err) {
         try {
-          new JZZ.MIDI.SMF(data);
+          new JZZ.MIDI.SYX(data);
+          ext = '.syx';
         }
         catch(err) {
-          console.error('Error:', err.message);
-          return;
+          try {
+            new JZZ.MIDI.SMF(data);
+          }
+          catch(err) {
+            console.error('Error:', err.message);
+            return;
+          }
         }
       }
     }
