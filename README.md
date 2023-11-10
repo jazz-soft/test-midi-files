@@ -129,6 +129,7 @@ const TEST = require('test-midi-files');
 - [**test-empty.midi2**](https://github.com/jazz-soft/test-midi-files/raw/main/midi2/test-empty.midi2)
 - [**test-minimal.midi2**](https://github.com/jazz-soft/test-midi-files/raw/main/midi2/test-minimal.midi2)
 - [**test-no-header.midi2**](https://github.com/jazz-soft/test-midi-files/raw/main/midi2/test-no-header.midi2)
+- [**test-text-message.midi2**](https://github.com/jazz-soft/test-midi-files/raw/main/midi2/test-text-message.midi2)
 - [**test-empty-file.midi2**](https://github.com/jazz-soft/test-midi-files/raw/main/midi2/test-empty-file.midi2)
 - [**test-not-a-midi-file.midi2**](https://github.com/jazz-soft/test-midi-files/raw/main/midi2/test-not-a-midi-file.midi2)
 ## More to come...
