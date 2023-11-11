@@ -62,7 +62,7 @@ function read(msg) {
   for (var i = 4; i < 16; i++) if (msg[i]) a += String.fromCharCode(msg[i]); else break;
   if (f == 0) {
     T[k] = '';
-    return [n, a];
+    return [n, JZZ.lib.fromUTF8(a)];
   }
   else if (f == 1) {
     T[k] = a;
@@ -73,7 +73,7 @@ function read(msg) {
   else if (f == 3) {
     a = T[k] + a;
     T[k] = '';
-    return [n, a];
+    return [n, JZZ.lib.fromUTF8(a)];
   }
 };
 
