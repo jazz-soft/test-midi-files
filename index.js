@@ -65,6 +65,16 @@ RawClip.prototype.toString = function() {
 RawClip.prototype.player = function() {
   return JZZ.MIDI.Clip(this.dump()).player();
 };
+RawClip.prototype.insertDelta = function(from, to) {
+  if (typeof from == 'undefined') from = 0;
+  if (typeof to == 'undefined') to = this.length;
+  if (to <= from) return;
+  for (var i = from; i < to; i++) {
+    if (this[i].isDelta() || i && this[i - 1].isDelta()) continue;
+    this.splice(i, 0, new JZZ.MIDI2.umpDelta(0));
+    to++;
+  }
+};
 JZZ.lib.copyMidi2Helpers(RawClip);
 
 if (module.parent) {
