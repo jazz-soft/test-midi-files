@@ -1,10 +1,10 @@
 {
   "name": "test-midi-files",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "A framework for producing test MIDI files",
   "main": "index.js",
   "scripts": {
-    "lint": "eslint .",
+    "lint": "eslint index.js",
     "test": "nyc mocha",
     "coverage": "nyc report --reporter=lcov"
   },
