@@ -45,7 +45,8 @@ module.exports = function(grunt) {
       if (a.length == 2) midis2.push(a[1]);
     }
     function group2(s) {
-      if (s.includes('-file')) return 1;
+      if (s.includes('-doggy')) return 1;
+      if (s.includes('-file')) return 2;
       return 0;
     }
     midis2.sort(function(a, b) {
