@@ -20,12 +20,12 @@
   ],
   "author": "jazz-soft (https://jazz-soft.net)",
   "dependencies": {
-    "jzz": "^1.7.7",
+    "jzz": "^1.7.8",
     "jzz-gui-player": "^1.7.0",
     "jzz-midi-gear": "^1.3.2",
     "jzz-midi-gm": "^1.3.5",
     "jzz-midi-smf": "^1.8.4",
-    "jzz-synth-tiny": "^1.3.7"
+    "jzz-synth-tiny": "^1.3.8"
   },
   "devDependencies": {
     "eslint": "^8.56.0",
