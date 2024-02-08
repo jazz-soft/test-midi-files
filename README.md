@@ -126,6 +126,7 @@ const TEST = require('test-midi-files');
 - [**test-c-major-scale-m1-g1.midi2**](https://github.com/jazz-soft/test-midi-files/raw/main/midi2/test-c-major-scale-m1-g1.midi2)
 - [**test-c-major-scale-m2-g0.midi2**](https://github.com/jazz-soft/test-midi-files/raw/main/midi2/test-c-major-scale-m2-g0.midi2)
 - [**test-c-major-scale-m2-g1.midi2**](https://github.com/jazz-soft/test-midi-files/raw/main/midi2/test-c-major-scale-m2-g1.midi2)
+- [**test-data.midi2**](https://github.com/jazz-soft/test-midi-files/raw/main/midi2/test-data.midi2)
 - [**test-empty.midi2**](https://github.com/jazz-soft/test-midi-files/raw/main/midi2/test-empty.midi2)
 - [**test-minimal.midi2**](https://github.com/jazz-soft/test-midi-files/raw/main/midi2/test-minimal.midi2)
 - [**test-no-header.midi2**](https://github.com/jazz-soft/test-midi-files/raw/main/midi2/test-no-header.midi2)
