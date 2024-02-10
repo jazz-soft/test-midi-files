@@ -132,6 +132,7 @@ const TEST = require('test-midi-files');
 - [**test-minimal.midi2**](https://github.com/jazz-soft/test-midi-files/raw/main/midi2/test-minimal.midi2)
 - [**test-no-header.midi2**](https://github.com/jazz-soft/test-midi-files/raw/main/midi2/test-no-header.midi2)
 - [**test-text-message.midi2**](https://github.com/jazz-soft/test-midi-files/raw/main/midi2/test-text-message.midi2)
+- [**test-text-out-of-order.midi2**](https://github.com/jazz-soft/test-midi-files/raw/main/midi2/test-text-out-of-order.midi2)
 - [**test-gm2-doggy-78-00-38-4c.midi2**](https://github.com/jazz-soft/test-midi-files/raw/main/midi2/test-gm2-doggy-78-00-38-4c.midi2)
 - [**test-gm2-doggy-79-01-7b.midi2**](https://github.com/jazz-soft/test-midi-files/raw/main/midi2/test-gm2-doggy-79-01-7b.midi2)
 - [**test-gs-doggy-01-00-7b.midi2**](https://github.com/jazz-soft/test-midi-files/raw/main/midi2/test-gs-doggy-01-00-7b.midi2)
