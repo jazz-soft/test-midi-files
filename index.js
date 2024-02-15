@@ -14,7 +14,15 @@ function RawClip(x) {
 RawClip.prototype = [];
 RawClip.prototype.send = function(msg) { this.push(JZZ.UMP(msg)); return this; };
 RawClip.prototype.annotate = function() {};
-RawClip.prototype.validate = function() {};
+RawClip.prototype.validate = function() {
+  var clip, w;
+  try {
+    clip = new JZZ.MIDI.Clip(this.dump());
+    w = clip.validate();
+  }
+  catch (e) {/**/}
+  return w;
+};
 RawClip.prototype._complain = function(off, msg) {
   console.log(off, msg);
 };
