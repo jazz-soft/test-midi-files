@@ -11,20 +11,46 @@ function RawClip(x) {
   if (typeof x != 'undefined') self.load(x);
   return self;
 }
+function Warn(off, msg, data) {
+  this.off = off;
+  this.msg = msg;
+  this.data = data;
+}
+Warn.prototype.toString = function() {
+  var a = [];
+  if (typeof this.off != 'undefined') a.push('offset ' + this.off);
+  a.push('--');
+  a.push(this.msg);
+  if (typeof this.data != 'undefined') a.push('(' + this.data + ')');
+  return a.join(' ');
+};
+function _tohex(x) { return (x < 16 ? '0' : '') + x.toString(16); }
+
 RawClip.prototype = [];
 RawClip.prototype.send = function(msg) { this.push(JZZ.UMP(msg)); return this; };
 RawClip.prototype.annotate = function() {};
 RawClip.prototype.validate = function() {
-  var clip, w;
+  var i;
+  var off = this._off || 0;
+  var ww = [];
+  if (this._warn) for (i = 0; i < this._warn.length; i++) ww.push(this._warn[i]);
   try {
-    clip = new JZZ.MIDI.Clip(this.dump());
-    w = clip.validate();
+    var clip = new JZZ.MIDI.Clip(this.dump());
+    var w = clip.validate();
+    if (w) for (i = 0; i < w.length; i++) {
+      w[i].off += off;
+      ww.push(w[i]);
+    }
   }
   catch (e) {/**/}
-  return w;
+  ww.sort(function(a, b) {
+    return (a.off || 0) - (b.off || 0) || (a.tick || 0) - (b.tick || 0);
+  });
+  return ww;
 };
-RawClip.prototype._complain = function(off, msg) {
-  console.log(off, msg);
+RawClip.prototype._complain = function(off, msg, data) {
+  if (!this._warn) this._warn = [];
+  this._warn.push(new Warn(off, msg, data));
 };
 RawClip.prototype.dump = function() {
   var a = [SMF2CLIP];
@@ -37,9 +63,8 @@ RawClip.prototype.load = function(s) {
   if (s.substr(0, 8) != SMF2CLIP) {
     var z = s.indexOf(SMF2CLIP);
     if (z != -1) {
-      s = s.substr(z);
-      this._complain(off, 'Extra leading characters', z);
       off += z;
+      this._complain(off, 'Extra leading characters', off);
     }
     else _error('Not a Clip');
   }
@@ -51,6 +76,12 @@ RawClip.prototype.load = function(s) {
     t = s.charCodeAt(off) >> 4;
     len = [4, 4, 4, 8, 8, 16, 4, 4, 8, 8, 8, 12, 12, 16, 16, 16][t];
     a = [];
+    if (s.length < off + len) {
+      for (i = off; i < s.length; i++) a.push(_tohex(s.charCodeAt(i)));
+      this._complain(off, 'Incomplete message', a.join(' '));
+      off += len;
+      break;
+    }
     for (i = 0; i < len; i++) a.push(s.charCodeAt(off + i));
     m = JZZ.UMP(a);
     if (m.isDelta()) tt += m.getDelta();
