@@ -24,11 +24,25 @@ Warn.prototype.toString = function() {
   if (typeof this.data != 'undefined') a.push('(' + this.data + ')');
   return a.join(' ');
 };
-function _tohex(x) { return (x < 16 ? '0' : '') + x.toString(16); }
+function _hex(x) { return (x < 16 ? '0' : '') + x.toString(16); }
 
 RawClip.prototype = [];
 RawClip.prototype.send = function(msg) { this.push(JZZ.UMP(msg)); return this; };
-RawClip.prototype.annotate = function() {};
+RawClip.prototype.annotate = function() {
+  var i, ctxt;
+  ctxt = JZZ.Context();
+  for (i = 0; i < this.length; i++) {
+    if (this[i].isStartClip()) break;
+    if (this[i].lbl) this[i].lbl = undefined;
+    ctxt._read(this[i]);
+  }
+  ctxt = JZZ.Context();
+  for (; i < this.length; i++) {
+    if (this[i].lbl) this[i].lbl = undefined;
+    ctxt._read(this[i]);
+  }
+  return this;
+};
 RawClip.prototype.validate = function() {
   var i;
   var off = this._off || 0;
@@ -77,7 +91,7 @@ RawClip.prototype.load = function(s) {
     len = [4, 4, 4, 8, 8, 16, 4, 4, 8, 8, 8, 12, 12, 16, 16, 16][t];
     a = [];
     if (s.length < off + len) {
-      for (i = off; i < s.length; i++) a.push(_tohex(s.charCodeAt(i)));
+      for (i = off; i < s.length; i++) a.push(_hex(s.charCodeAt(i)));
       this._complain(off, 'Incomplete message', a.join(' '));
       off += len;
       break;

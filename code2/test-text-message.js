@@ -30,7 +30,7 @@ clip
   .umpCPerformerName(6, 6, 'Performer Name per channel')
   .tick(96)
   .umpAccPerformerName(7, 'Accompanying Performer Name per group')
-  .umpCAccPerformerName(7, 7, 'AccompanyingPerformer Name per channel')
+  .umpCAccPerformerName(7, 7, 'Accompanying Performer Name per channel')
   .tick(96)
   .umpRecordingDate(8, 'Recording Date per group')
   .umpCRecordingDate(8, 8, 'Recording Date per channel')
