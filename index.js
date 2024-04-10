@@ -3,6 +3,21 @@ var path = require('path');
 var JZZ = require('jzz');
 require('jzz-midi-gm')(JZZ);
 require('jzz-midi-smf')(JZZ);
+var WA;
+
+function tryWA() {
+  if (WA) return;
+  try{
+    WA = require('node-web-audio-api');
+    if (global && !global.window) global.window = {};
+    if (!global.window.AudioContext) global.window.AudioContext = WA.AudioContext;
+    require('jzz-synth-tiny')(JZZ);
+    JZZ.synth.Tiny.register('Web Audio');
+  }
+  catch (e) {
+    WA = true;
+  }
+}
 
 function _error(s) { throw new Error(s); }
 var SMF2CLIP = 'SMF2CLIP';
@@ -204,6 +219,7 @@ else {
   var data;
   var smf;
   if (process.argv.length < 3) {
+    tryWA();
     usage(process.argv[0], process.argv[1]);
     process.exit(0);
   }
@@ -276,6 +292,7 @@ function play(smf, out) {
     console.log(JZZ.lib.toBase64(smf.dump()));
     return;
   }
+  tryWA();
   var player = smf.player();
   JZZ().or(function() {
     console.error('Cannot start MIDI engine!');
@@ -296,7 +313,7 @@ function play(smf, out) {
       m2m1.connect(this);
       player.connect(m2m1);
       player.connect(log);
-      player.onEnd = function() { console.log('\ndone!'); };
+      player.onEnd = function() { console.log('\ndone!'); process.exit(0); };
       player.play();
     });
   });

@@ -21,16 +21,17 @@
   "author": "jazz-soft (https://jazz-soft.net)",
   "dependencies": {
     "jzz": "^1.8.1",
-    "jzz-gui-player": "^1.7.2",
-    "jzz-midi-gear": "^1.3.2",
-    "jzz-midi-gm": "^1.3.5",
-    "jzz-midi-smf": "^1.9.0",
-    "jzz-synth-tiny": "^1.3.8"
+    "jzz-gui-player": "^1.7.3",
+    "jzz-midi-gear": "^1.3.3",
+    "jzz-midi-gm": "^1.3.6",
+    "jzz-midi-smf": "^1.9.1",
+    "jzz-synth-tiny": "^1.3.9"
   },
   "devDependencies": {
-    "eslint": "^8.57.0",
+    "eslint": "^9.0.0",
     "grunt": "^1.6.1",
-    "mocha": "^10.3.0",
+    "mocha": "^10.4.0",
+    "node-web-audio-api": "^0.18.0",
     "nyc": "^15.1.0"
   },
   "runkitExampleFilename": "runkit.js",
