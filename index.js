@@ -89,7 +89,7 @@ RawClip.prototype.dump = function() {
 RawClip.prototype.load = function(s) {
   var off = 0;
   if (!s.length) _error('Empty file');
-  if (s.substr(0, 8) != SMF2CLIP) {
+  if (s.substring(0, 8) != SMF2CLIP) {
     var z = s.indexOf(SMF2CLIP);
     if (z != -1) {
       off += z;
@@ -207,7 +207,7 @@ if (module.parent) {
     }
     if (typeof name == 'undefined') {
       name = path.basename(process.argv[1]);
-      if (name.toLowerCase().endsWith('.js')) name = name.substr(0, name.length - 3);
+      if (name.toLowerCase().endsWith('.js')) name = name.substring(0, name.length - 3);
       name = path.join(__dirname, ext == '.midi2' ? 'midi2' : 'midi', name + ext);
     }
     console.log('Writing ' + name + ' ...');

@@ -20,7 +20,7 @@ trk.smfSeqName('Corrupt File: Mising Byte')
   .smfText('Thank you!');
 
 var data = smf.dump();
-data = data.substr(0, data.length - 1);
+data = data.substring(0, data.length - 1);
 
 TEST.write(data);
 TEST.play(data);
