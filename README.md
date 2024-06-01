@@ -87,6 +87,8 @@ const TEST = require('test-midi-files');
 - [**test-rpn-00-01-fine-tuning.mid**](https://github.com/jazz-soft/test-midi-files/raw/main/midi/test-rpn-00-01-fine-tuning.mid)
 - [**test-rpn-00-02-coarse-tuning.mid**](https://github.com/jazz-soft/test-midi-files/raw/main/midi/test-rpn-00-02-coarse-tuning.mid)
 - [**test-rpn-00-05-modulation-depth-range.mid**](https://github.com/jazz-soft/test-midi-files/raw/main/midi/test-rpn-00-05-modulation-depth-range.mid)
+- [**test-running-status-metaevent.mid**](https://github.com/jazz-soft/test-midi-files/raw/main/midi/test-running-status-metaevent.mid)
+- [**test-running-status-sysex.mid**](https://github.com/jazz-soft/test-midi-files/raw/main/midi/test-running-status-sysex.mid)
 - [**test-smpte-offset.mid**](https://github.com/jazz-soft/test-midi-files/raw/main/midi/test-smpte-offset.mid)
 - [**test-sysex-7e-06-01-id-request.mid**](https://github.com/jazz-soft/test-midi-files/raw/main/midi/test-sysex-7e-06-01-id-request.mid)
 - [**test-sysex-7e-09-01-gm1-enable.mid**](https://github.com/jazz-soft/test-midi-files/raw/main/midi/test-sysex-7e-09-01-gm1-enable.mid)

@@ -22,13 +22,13 @@
   "dependencies": {
     "jzz": "^1.8.4",
     "jzz-gui-player": "^1.7.4",
-    "jzz-midi-gear": "^1.3.3",
-    "jzz-midi-gm": "^1.3.6",
+    "jzz-midi-gear": "^1.3.4",
+    "jzz-midi-gm": "^1.3.7",
     "jzz-midi-smf": "^1.9.2",
     "jzz-synth-tiny": "^1.4.0"
   },
   "devDependencies": {
-    "eslint": "^9.3.0",
+    "eslint": "^9.4.0",
     "grunt": "^1.6.1",
     "mocha": "^10.4.0",
     "node-web-audio-api": "^0.21.0",
