@@ -1,7 +1,8 @@
 .*
 code*
 midi*
-test*
 coverage
 Gruntfile.js
+eslint.config.mjs
+test*
 *.html
