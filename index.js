@@ -108,7 +108,6 @@ RawClip.prototype.load = function(s) {
     if (s.length < off + len) {
       for (i = off; i < s.length; i++) a.push(_hex(s.charCodeAt(i)));
       this._complain(off, 'Incomplete message', a.join(' '));
-      // off += len;
       break;
     }
     for (i = 0; i < len; i++) a.push(s.charCodeAt(off + i));
