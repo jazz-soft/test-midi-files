@@ -108,7 +108,7 @@ RawClip.prototype.load = function(s) {
     if (s.length < off + len) {
       for (i = off; i < s.length; i++) a.push(_hex(s.charCodeAt(i)));
       this._complain(off, 'Incomplete message', a.join(' '));
-      off += len;
+      // off += len;
       break;
     }
     for (i = 0; i < len; i++) a.push(s.charCodeAt(off + i));
@@ -145,7 +145,7 @@ RawClip.prototype.insertDelta = function(from, to) {
 };
 JZZ.lib.copyMidi2Helpers(RawClip);
 
-if (module.parent) {
+if (require.main !== module) {
   module.exports.play = function(smf) {
     if (smf instanceof JZZ.MIDI.SMF || smf instanceof JZZ.MIDI.SYX || smf instanceof JZZ.MIDI.Clip || smf instanceof RawClip) smf = smf.dump();
     try {
