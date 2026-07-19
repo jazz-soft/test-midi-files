@@ -29,11 +29,11 @@
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
-    "eslint": "^10.2.0",
-    "globals": "^17.4.0",
-    "grunt": "^1.6.1",
-    "mocha": "^11.7.5",
-    "node-web-audio-api": "^1.0.9",
+    "eslint": "^10.7.0",
+    "globals": "^17.7.0",
+    "grunt": "^1.6.2",
+    "mocha": "^11.7.6",
+    "node-web-audio-api": "^2.0.0",
     "nyc": "^18.0.0"
   },
   "repository": {
